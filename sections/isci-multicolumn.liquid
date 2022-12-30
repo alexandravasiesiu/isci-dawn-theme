@@ -1,170 +1,53 @@
 {%- style -%}
-  @media only screen and (max-width: 600px) {
-    .multicolumn_section {
-      display: flex;
-      row-gap: 50px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-    .heading_container {
-      width: 85%;
-      display: flex;
-      flex-flow: column;
-    }
-    .flex_container {
-      display: flex;
-      gap: 40px;
-      flex-wrap: wrap;
-      justify-content: space-evenly;
-    }
-    .rectangle_column {
-      width: 90%;
-    }
-    .column {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-evenly;
-    }
-    .column_title {
-      width: 90%;
-    }
-    .column_subtitle {
-      display: flex;
-      justify-content: start;
-      width: 90%;
-    }
-    .description,
-    .list {
-      padding: 0;
-      width: 90%;
-    }
+  .w-95 {
+    width: 95% !important;
+  }
 
-    .button_container {
-      display: flex;
-      gap: 20px;
-      justify-content: center;
-      width: 100%;
-      padding-bottom: 40px;
-      flex-wrap: wrap;
-    }
-    .button_add {
-      width: 206px;
-      height: 45px;
-    }
-    .button_other {
-      width: 206px;
-      height: 45px;
-    }
+  .w-100 {
+    width: 100% !important;
   }
-  @media only screen and (min-width: 768px) and (max-width: 1200px) {
-    .multicolumn_section {
-      display: flex;
-      row-gap: 50px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-    .heading_container {
-      width: 91%;
-      display: flex;
-      flex-flow: column;
-    }
-    .flex_container {
-      display: flex;
-      gap: 40px;
-      flex-wrap: wrap;
-      justify-content: space-evenly;
-    }
-    .rectangle_column {
-      width: 45%;
-    }
-    .column {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-evenly;
-    }
-    .column_title {
-      width: 90%;
-    }
-    .column_subtitle {
-      display: flex;
-      justify-content: start;
-      width: 90%;
-    }
-    .description,
-    .list {
-      padding: 0;
-      width: 90%;
-    }
-    .button_container {
-      display: flex;
-      gap: 70px;
-      justify-content: center;
-      width: 100%;
-      padding-bottom: 40px;
-    }
-    .button_add {
-      width: 206px;
-      height: 45px;
-    }
-    .button_other {
-      width: 206px;
-      height: 45px;
-    }
+
+  .no-margin {
+    margin: 0 !important;
   }
-  @media only screen and (min-width: 1200px) {
-    .multicolumn_section {
-      display: flex;
-      row-gap: 50px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-    .heading_container {
-      width: 91%;
-      display: flex;
-      flex-flow: column;
-    }
-    .flex_container {
-      display: flex;
-      gap: 40px;
-      flex-wrap: wrap;
-      justify-content: space-evenly;
-    }
-    .rectangle_column {
-      width: 45%;
-    }
-    .column {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-evenly;
-    }
-    .column_title {
-      width: 90%;
-    }
-    .column_subtitle {
-      display: flex;
-      justify-content: start;
-      width: 90%;
-    }
-    .description,
-    .list {
-      padding: 0;
-      width: 90%;
-    }
-    .button_container {
-      display: flex;
-      gap: 70px;
-      justify-content: center;
-      width: 100%;
-      padding-bottom: 40px;
-    }
-    .button_add {
-      width: 206px;
-      height: 45px;
-    }
-    .button_other {
-      width: 206px;
-      height: 45px;
-    }
+
+  .multicolumn_section {
+    display: flex;
+    row-gap: 50px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .flex_container {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+  .column {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+  .column_title {
+    width: 90%;
+  }
+  .column_subtitle {
+    display: flex;
+    justify-content: start;
+    width: 90%;
+  }
+  .description,
+  .list {
+    padding: 0;
+    width: 90%;
+  }
+  .button_add {
+    width: 206px;
+    height: 45px;
+  }
+  .button_other {
+    width: 206px;
+    height: 45px;
   }
   .section_title {
     font-family: Assistant;
@@ -259,6 +142,43 @@
     font-size: 16px;
     background-color: transparent;
   }
+
+  @media only screen and (max-width: 768px) {
+    .heading_container {
+      width: 85%;
+      display: flex;
+      flex-flow: column;
+    }
+    .rectangle_column {
+      width: 90%;
+    }
+    .button_container {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      width: 100%;
+      padding-bottom: 40px;
+      flex-wrap: wrap;
+    }
+  }
+
+  @media only screen and (min-width: 768px) {
+    .heading_container {
+      width: 95%;
+      display: flex;
+      flex-flow: column;
+    }
+    .rectangle_column {
+      width: 45%;
+    }
+    .button_container {
+      display: flex;
+      gap: 70px;
+      justify-content: center;
+      width: 100%;
+      padding-bottom: 40px;
+    }
+  }
 {%- endstyle -%}
 
 {%- liquid
@@ -267,18 +187,23 @@
 <div class="multicolumn_section">
   <div class="flex_container">
     <div class="heading_container">
-      <h3 class="section_title"><strong>DESCRIEREA CURSULUI</strong></h3>
-      <div class="Line-3"><hr></div>
-      <h4 class="description_title"><strong>Cui îi este destinat acest modul?</strong></h4>
-      <ul class="description">
-        <li>
-          Oricărui antrenor, preparator, instructor, sau părinte care este implicat în pregătirea sportivă a tinerilor.
-        </li>
-      </ul>
-      <h4 class="description_title"><strong>Ce vei învăța în acest modul?</strong></h4>
-      <ul class="description">
-        <li>Cum să maximizezi potențialul de reușită a tinerilor sportivi antrenându-i metodic.</li>
-      </ul>
+      <div class="column">
+        <h3 class="section_title w-95"><strong>DESCRIEREA CURSULUI</strong></h3>
+        <div class="w-95">
+          <div class="Line-3"><hr class="no-margin"></div>
+        </div>
+        <h4 class="description_title w-95"><strong>Cui îi este destinat acest modul?</strong></h4>
+        <ul class="description w-95">
+          <li>
+            Oricărui antrenor, preparator, instructor, sau părinte care este implicat în pregătirea sportivă a
+            tinerilor.
+          </li>
+        </ul>
+        <h4 class="description_title w-95"><strong>Ce vei învăța în acest modul?</strong></h4>
+        <ul class="description w-95">
+          <li>Cum să maximizezi potențialul de reușită a tinerilor sportivi antrenându-i metodic.</li>
+        </ul>
+      </div>
     </div>
     <div class="rectangle_column">
       <div class="column">
