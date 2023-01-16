@@ -1,24 +1,28 @@
 {%- style -%}
   .text_image_section {
     display: flex;
+    width: 100%;
+    padding: 50px;
   }
   .image_container {
-    width: 291.1px;
-    height: 432px;
-    margin: 168px 111.5px 174px 102.4px;
+    width: 20%;
     object-fit: contain;
   }
   .rectangle_container {
-    width: 998px;
-    height: 524px;
-    margin: 124px 97px 126px 49.7px;
-    padding: 94px 43px 113px 120px;
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 20px;
     background-color: #fafafa;
   }
+  .rectangle_container_heading,
+  .rectangle_container_subtitle {
+    display: flex;
+    width: 80%;
+    align-items: flex-end;
+  }
   .heading {
-    width: 525px;
-    height: 33px;
-    margin: 0 310px 20px 0;
     font-family: Assistant;
     font-size: 25px;
     font-weight: 600;
@@ -27,11 +31,9 @@
     line-height: normal;
     letter-spacing: 0.18px;
     color: #101010;
+    text-decoration: underline;
   }
   .subtitle {
-    width: 93px;
-    height: 26px;
-    margin: 20px 333px 12px 0;
     font-family: Assistant;
     font-size: 20px;
     font-weight: 600;
@@ -44,15 +46,12 @@
   .competency {
     display: flex;
     flex-wrap: wrap;
-    width: 100%;
+    width: 80%;
   }
-  .column {
-    width: 45%;
+  .competency_column {
+    width: 50%;
   }
-  .column_title {
-    width: 396px;
-    height: 23px;
-    margin: 12px 30px 6px 0;
+  .competency_column_title {
     font-family: Assistant;
     font-size: 18px;
     font-weight: 600;
@@ -62,10 +61,8 @@
     letter-spacing: 0.13px;
     color: #101010;
   }
-  .column_list {
-    width: 396px;
-    height: 23px;
-    margin: 6px 30px 5px 0;
+  .competency_column_subtitle,
+  .competency_column_list {
     font-family: Assistant;
     font-size: 18px;
     font-weight: normal;
@@ -75,47 +72,74 @@
     letter-spacing: 0.13px;
     color: #101010;
   }
+  .no-margin {
+    margin: 0 !important;
+  }
+  @media only screen and (max-width: 768px) {
+    .text_image_section {
+      display: flex;
+      width: 100%;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      padding: 50px 0;
+    }
+    .image_container {
+      object-fit: contain;
+      display: flex;
+      width: 80%;
+    }
+    .rectangle_container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      gap: 20px;
+      background-color: #fafafa;
+    }
+    .competency_column {
+      width: 100%;
+    }
+  }
 {%- endstyle -%}
 <div class="text_image_section">
-  <div class="image_container">
+  <div class="image_container no-margin">
     <img src="{{ 'trainer.png' | asset_url }}">
   </div>
   <div class="rectangle_container">
-    <div class="heading">
-      <h3>LECTOR: Lucian Nicolescu, Director ISCI România</h3>
+    <div class="rectangle_container_heading">
+      <h3 class="heading no-margin">LECTOR: Lucian Nicolescu, Director ISCI România</h3>
     </div>
-    <div class="subtitle">
-      <h5>Experiențe</h5>
+    <div class="rectangle_container_subtitle">
+      <h5 class="subtitle no-margin">Experiențe</h5>
     </div>
     <div class="competency">
-      <div class="column">
-        <h6 class="column_title">Fitness</h6>
-        <p class="column_subtitle">Răzvan Gabriel Ion, Men's Physique:</p>
-        <ul class="column_list">
+      <div class="competency_column">
+        <h6 class="competency_column_title no-margin">Fitness</h6>
+        <p class="competency_column_subtitle no-margin">Răzvan Gabriel Ion, Men's Physique:</p>
+        <ul class="competency_column_list">
           <li>locul 1 la Campionatul Balcanic, 2020;</li>
           <li>locul 1 la Grand Prix Pro Nutrition, 2020;</li>
           <li>locul 1 la Campionatul Balcanic, 2021.</li>
         </ul>
       </div>
-      <div class="column">
-        <h6 class="column_title">Tenis</h6>
-        <ul class="column_list">
+      <div class="competency_column">
+        <h6 class="competency_column_title no-margin">Tenis</h6>
+        <ul class="competency_column_list">
           <li>Echipa României de Cupa Davis</li>
           <li>Horia Tecău (locul 1 mondial ATP Doubles)</li>
           <li>Marius Copil (locul 56 mondial ATP)</li>
           <li>Gabriela Ruse (locul 57 mondial WTA)</li>
         </ul>
       </div>
-      <div class="column">
-        <h6 class="column_title">Gimnastică</h6>
-        <ul class="column_list">
+      <div class="competency_column">
+        <h6 class="competency_column_title no-margin">Gimnastică</h6>
+        <ul class="competency_column_list">
           <li>Lotul Român de Gimnastică Artistică Masculină</li>
           <li>Lotul Român de Gimnastică Artistică Feminină</li>
         </ul>
       </div>
-      <div class="column">
-        <h6 class="column_title">Atletism</h6>
-        <ul class="column_list">
+      <div class="competency_column">
+        <h6 class="competency_column_title no-margin">Atletism</h6>
+        <ul class="competency_column_list">
           <li>Rareș Toader, aruncarea greutății, (locul 22 mondial)</li>
         </ul>
       </div>

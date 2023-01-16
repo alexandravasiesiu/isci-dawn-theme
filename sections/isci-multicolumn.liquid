@@ -17,27 +17,27 @@
     justify-content: center;
     flex-wrap: wrap;
   }
-  .flex_container {
+  .multicolumn_flex_container {
     display: flex;
     gap: 40px;
     flex-wrap: wrap;
     justify-content: space-evenly;
   }
-  .column {
+  .multicolumn_column {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
   }
-  .column_title {
+  .multicolumn_column_title {
     width: 90%;
   }
-  .column_subtitle {
+  .multicolumn_column_subtitle {
     display: flex;
     justify-content: start;
     width: 90%;
   }
-  .description,
-  .list {
+  .heading_description,
+  .multicolumn_list {
     padding: 0;
     width: 90%;
   }
@@ -64,7 +64,7 @@
     height: 0.5px;
     border: solid 5px #591311;
   }
-  .description_title {
+  .heading_description_title {
     font-family: Assistant;
     font-size: 22px;
     font-weight: 600;
@@ -74,7 +74,7 @@
     letter-spacing: normal;
     color: #101010;
   }
-  .description {
+  .heading_description {
     font-family: Assistant;
     font-size: 18px;
     font-weight: normal;
@@ -84,7 +84,7 @@
     letter-spacing: normal;
     color: #101010;
   }
-  .column_title {
+  .multicolumn_column_title {
     font-family: Assistant;
     font-size: 20px;
     font-weight: 600;
@@ -94,7 +94,7 @@
     letter-spacing: normal;
     color: #101010;
   }
-  .column_subtitle {
+  .multicolumn_column_subtitle {
     font-family: Assistant;
     font-size: 18px;
     font-weight: 600;
@@ -104,13 +104,13 @@
     letter-spacing: normal;
     color: #101010;
   }
-  .column li::marker,
-  .description li::marker {
+  .multicolumn_column li::marker,
+  .heading_description li::marker {
     content: '✓';
     color: black;
     font-weight: bold;
   }
-  .column li {
+  .multicolumn_column li {
     font-family: Assistant;
     font-size: 18px;
     font-weight: normal;
@@ -120,11 +120,11 @@
     letter-spacing: normal;
     color: #101010;
   }
-  .rectangle_column {
+  .multicolumn_rectangle_column {
     box-shadow: 10px 32px 72px 0 rgba(51, 51, 51, 0.06);
     background-color: #fff;
   }
-  .button_add {
+  .multicolumn_button_add {
     border: none;
     color: black;
     text-align: center;
@@ -133,7 +133,7 @@
     font-size: 16px;
     background-color: #fbb612;
   }
-  .button_other {
+  .multicolumn_button_other {
     border: solid 1px #fbb612;
     color: black;
     text-align: center;
@@ -144,15 +144,15 @@
   }
 
   @media only screen and (max-width: 768px) {
-    .heading_container {
+    .multicolumn_heading {
       width: 85%;
       display: flex;
       flex-flow: column;
     }
-    .rectangle_column {
+    .multicolumn_rectangle_column {
       width: 90%;
     }
-    .button_container {
+    .multicolumn_button_container {
       display: flex;
       gap: 20px;
       justify-content: center;
@@ -163,15 +163,15 @@
   }
 
   @media only screen and (min-width: 768px) {
-    .heading_container {
+    .multicolumn_heading {
       width: 95%;
       display: flex;
       flex-flow: column;
     }
-    .rectangle_column {
+    .multicolumn_rectangle_column {
       width: 45%;
     }
-    .button_container {
+    .multicolumn_button_container {
       display: flex;
       gap: 70px;
       justify-content: center;
@@ -185,40 +185,40 @@
 
 -%}
 <div class="multicolumn_section">
-  <div class="flex_container">
-    <div class="heading_container">
-      <div class="column">
+  <div class="multicolumn_flex_container">
+    <div class="multicolumn_heading">
+      <div class="multicolumn_column">
         <h3 class="section_title w-95"><strong>DESCRIEREA CURSULUI</strong></h3>
         <div class="w-95">
           <div class="Line-3"><hr class="no-margin"></div>
         </div>
-        <h4 class="description_title w-95"><strong>Cui îi este destinat acest modul?</strong></h4>
-        <ul class="description w-95">
+        <h4 class="heading_description_title w-95"><strong>Cui îi este destinat acest modul?</strong></h4>
+        <ul class="heading_description w-95">
           <li>
             Oricărui antrenor, preparator, instructor, sau părinte care este implicat în pregătirea sportivă a
             tinerilor.
           </li>
         </ul>
-        <h4 class="description_title w-95"><strong>Ce vei învăța în acest modul?</strong></h4>
-        <ul class="description w-95">
+        <h4 class="heading_description_title w-95"><strong>Ce vei învăța în acest modul?</strong></h4>
+        <ul class="heading_description w-95">
           <li>Cum să maximizezi potențialul de reușită a tinerilor sportivi antrenându-i metodic.</li>
         </ul>
       </div>
     </div>
-    <div class="rectangle_column">
-      <div class="column">
-        <h4 class="column_title"><strong>1.GENERALITĂȚI</strong></h4>
-        <ul class="list">
+    <div class="multicolumn_rectangle_column">
+      <div class="multicolumn_column">
+        <h4 class="multicolumn_column_title"><strong>1.GENERALITĂȚI</strong></h4>
+        <ul class="multicolumn_list">
           <li>Antrenamentul sportiv: proces educativ sau proces de adaptări fiziologice?</li>
           <li>Sportivi: tipuri de personalități întâlnite și modalități de abordare.</li>
           <li>Antrenorul: pedagogia și comunicarea în sport</li>
         </ul>
       </div>
     </div>
-    <div class="rectangle_column">
-      <div class="column">
-        <h4 class="column_title"><strong>2.ETAPELE DEZVOLTĂRII SPORTIVE</strong></h4>
-        <ul class="list">
+    <div class="multicolumn_rectangle_column">
+      <div class="multicolumn_column">
+        <h4 class="multicolumn_column_title"><strong>2.ETAPELE DEZVOLTĂRII SPORTIVE</strong></h4>
+        <ul class="multicolumn_list">
           <li>Vârstele etapelor în diferite sporturi</li>
           <li>Inițierea</li>
           <li>Formarea</li>
@@ -227,10 +227,10 @@
         </ul>
       </div>
     </div>
-    <div class="rectangle_column">
-      <div class="column">
-        <h4 class="column_title"><strong>3.PREGĂTIREA GENERALĂ vs. SPECIALIZAREA TIMPURIE</strong></h4>
-        <ul class="list">
+    <div class="multicolumn_rectangle_column">
+      <div class="multicolumn_column">
+        <h4 class="multicolumn_column_title"><strong>3.PREGĂTIREA GENERALĂ vs. SPECIALIZAREA TIMPURIE</strong></h4>
+        <ul class="multicolumn_list">
           <li>Diferențe și rezultate obținute cu Modelul Rusesc vs. Modelul American</li>
           <li>
             Decizia Chinei în anul 2020 de a forma unele loturi naționale în funcție de rezultatele testelor fizice
@@ -243,13 +243,13 @@
         </ul>
       </div>
     </div>
-    <div class="rectangle_column">
-      <div class="column">
-        <h4 class="column_title">
+    <div class="multicolumn_rectangle_column">
+      <div class="multicolumn_column">
+        <h4 class="multicolumn_column_title">
           <strong>4. ANTRENAREA TINERILOR SPORTIVI RESPECTÂND ETAPELE ACESTORA DE DEZVOLTARE.</strong>
         </h4>
-        <h5 class="column_subtitle"><strong>Teorie si practică:</strong></h5>
-        <ul class="list">
+        <h5 class="multicolumn_column_subtitle"><strong>Teorie si practică:</strong></h5>
+        <ul class="multicolumn_list">
           <li>Antrenarea deprinderilor motrice.</li>
           <li>Antrenarea mobilității</li>
           <li>Antrenarea forței și puterii</li>
@@ -261,8 +261,8 @@
       </div>
     </div>
   </div>
-  <div class="button_container">
-    <button class="button_add">
+  <div class="multicolumn_button_container">
+    <button class="multicolumn_button_add">
       <a
         role="link"
         aria-disabled="true"
@@ -270,7 +270,7 @@
       ></a
       >Adaugă în coș
     </button>
-    <button class="button_other">
+    <button class="multicolumn_button_other">
       <a
         role="link"
         aria-disabled="true"

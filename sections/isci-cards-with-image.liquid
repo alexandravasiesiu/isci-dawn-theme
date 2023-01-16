@@ -25,9 +25,11 @@
     height: 0.5px;
     border: solid 5px #591311;
   }
-  .flex_container {
+  .cards_flex_container {
     display: flex;
     justify-content: space-evenly;
+    gap: 10px;
+    flex-wrap: wrap;
   }
   .card {
     border-radius: 12px;
@@ -65,6 +67,9 @@
     display: flex;
     flex-flow: column;
     row-gap: 5px;
+  }
+  .card_text {
+    background-color: #fafafa;
   }
   .difficulty_section {
     display: flex;
@@ -129,7 +134,7 @@
   .difficulty_levels p {
     margin: 0;
   }
-  .button_container {
+  .cards_button_container {
     display: flex;
     gap: 10px;
     justify-content: space-between;
@@ -189,7 +194,7 @@
     <h1 class="section_title">ALTE CURSURI</h1>
     <div class="Line-3"><hr class="no-margin"></div>
   </div>
-  <div class="flex_container">
+  <div class="cards_flex_container">
     <div class="card">
       <div class="card_image">
         <img src="{{ 'card-img1.jpg' | asset_url }}">
@@ -223,8 +228,8 @@
               >&emsp;&emsp;&emsp;2500 lei
             </p>
           </div>
-          <div class="button_container">
-            <button class="button_add">
+          <div class="cards_button_container">
+            <button class="cards_button_add">
               <a
                 role="link"
                 aria-disabled="true"
@@ -232,7 +237,7 @@
               ></a
               >Adaugă în coș
             </button>
-            <button class="button_details">
+            <button class="cards_button_details">
               <a
                 role="link"
                 aria-disabled="true"
@@ -277,8 +282,8 @@
               >&emsp;&emsp;&emsp;2500 lei
             </p>
           </div>
-          <div class="button_container">
-            <button class="button_add">
+          <div class="cards_button_container">
+            <button class="cards_button_add">
               <a
                 role="link"
                 aria-disabled="true"
@@ -286,7 +291,7 @@
               ></a
               >Adaugă în coș
             </button>
-            <button class="button_details">
+            <button class="cards_button_details">
               <a
                 role="link"
                 aria-disabled="true"
@@ -329,7 +334,7 @@
             <p class="card_note"><strong>Va fi lansat în curând</strong></p>
           </div>
           <div>
-            <button class="button_details">
+            <button class="cards_button_details">
               <a
                 role="link"
                 aria-disabled="true"
