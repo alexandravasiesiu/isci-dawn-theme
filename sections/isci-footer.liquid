@@ -1,0 +1,92 @@
+{%- style -%}
+  .footer_section {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+  }
+  .footer_section_body {
+    display: flex;
+    width: 90%;
+    flex-wrap: wrap;
+  }
+  .column {
+    width: 50%;
+    display: flex;
+    flex-flow: column;
+  }
+  .column_title p {
+    font-family: Assistant;
+    font-size: 18px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #101010;
+  }
+  .footer_section_bottom p,
+  .column_list p {
+    font-family: Assistant;
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #101010;
+  }
+  .footer_section_bottom {
+    display: flex;
+    width: 90%;
+  }
+  @media only screen and (max-width: 768px) {
+    .column {
+      width: 100%;
+      display: flex;
+      flex-flow: column;
+    }
+  }
+{%- endstyle -%}
+
+<div class="footer_section">
+  <div class="footer_section_body">
+    <div class="column">
+      <div class="column_title">
+        <p>Informații</p>
+      </div>
+      <div class="column_list">
+        <p>Search</p>
+        <p>Despre noi</p>
+        <p>Contacteaza-ne</p>
+      </div>
+    </div>
+    <div class="column">
+      <div class="column_title">
+        <p class="column_title">Legislație</p>
+      </div>
+      <div class="column_list">
+        <p>Termeni și condiții</p>
+        <p>Politica de confidențialitate</p>
+        <p>ANPC</p>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div class="footer_section_bottom">
+    <p>&#169;2022, ISCI Romania Susținut de Shopify</p>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "ISCI footer",
+  "class": "section",
+  "tag": "section",
+  "settings": [],
+  "presets": [
+    {
+      "name": "ISCI footer",
+      "blocks": []
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,139 @@
+{%- style -%}
+  .text_image_section {
+    display: flex;
+  }
+  .image_container {
+    width: 291.1px;
+    height: 432px;
+    margin: 168px 111.5px 174px 102.4px;
+    object-fit: contain;
+  }
+  .rectangle_container {
+    width: 998px;
+    height: 524px;
+    margin: 124px 97px 126px 49.7px;
+    padding: 94px 43px 113px 120px;
+    background-color: #fafafa;
+  }
+  .heading {
+    width: 525px;
+    height: 33px;
+    margin: 0 310px 20px 0;
+    font-family: Assistant;
+    font-size: 25px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 0.18px;
+    color: #101010;
+  }
+  .subtitle {
+    width: 93px;
+    height: 26px;
+    margin: 20px 333px 12px 0;
+    font-family: Assistant;
+    font-size: 20px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 0.14px;
+    color: #101010;
+  }
+  .competency {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  .column {
+    width: 45%;
+  }
+  .column_title {
+    width: 396px;
+    height: 23px;
+    margin: 12px 30px 6px 0;
+    font-family: Assistant;
+    font-size: 18px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 0.13px;
+    color: #101010;
+  }
+  .column_list {
+    width: 396px;
+    height: 23px;
+    margin: 6px 30px 5px 0;
+    font-family: Assistant;
+    font-size: 18px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 0.13px;
+    color: #101010;
+  }
+{%- endstyle -%}
+<div class="text_image_section">
+  <div class="image_container">
+    <img src="{{ 'trainer.png' | asset_url }}">
+  </div>
+  <div class="rectangle_container">
+    <div class="heading">
+      <h3>LECTOR: Lucian Nicolescu, Director ISCI România</h3>
+    </div>
+    <div class="subtitle">
+      <h5>Experiențe</h5>
+    </div>
+    <div class="competency">
+      <div class="column">
+        <h6 class="column_title">Fitness</h6>
+        <p class="column_subtitle">Răzvan Gabriel Ion, Men's Physique:</p>
+        <ul class="column_list">
+          <li>locul 1 la Campionatul Balcanic, 2020;</li>
+          <li>locul 1 la Grand Prix Pro Nutrition, 2020;</li>
+          <li>locul 1 la Campionatul Balcanic, 2021.</li>
+        </ul>
+      </div>
+      <div class="column">
+        <h6 class="column_title">Tenis</h6>
+        <ul class="column_list">
+          <li>Echipa României de Cupa Davis</li>
+          <li>Horia Tecău (locul 1 mondial ATP Doubles)</li>
+          <li>Marius Copil (locul 56 mondial ATP)</li>
+          <li>Gabriela Ruse (locul 57 mondial WTA)</li>
+        </ul>
+      </div>
+      <div class="column">
+        <h6 class="column_title">Gimnastică</h6>
+        <ul class="column_list">
+          <li>Lotul Român de Gimnastică Artistică Masculină</li>
+          <li>Lotul Român de Gimnastică Artistică Feminină</li>
+        </ul>
+      </div>
+      <div class="column">
+        <h6 class="column_title">Atletism</h6>
+        <ul class="column_list">
+          <li>Rareș Toader, aruncarea greutății, (locul 22 mondial)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "ISCI text with image",
+  "class": "section",
+  "tag": "section",
+  "settings": [],
+  "presets": [
+    {
+      "name": "ISCI text with image",
+      "blocks": []
+    }
+  ]
+}
+{% endschema %}

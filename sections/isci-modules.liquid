@@ -1,0 +1,420 @@
+{%- style -%}
+  .modules_section {
+    display: flex;
+    flex-flow: column;
+    row-gap: 50px;
+    padding-bottom: 50px;
+  }
+  .modules_heading_container {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    background-color: #101010;
+  }
+  .modules_heading {
+    font-family: Assistant;
+    font-size: 30px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.73;
+    letter-spacing: normal;
+    color: #fff;
+  }
+  .modules_flex_container {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+  .modules_card {
+    border-radius: 12px;
+    box-shadow: 10px 32px 72px 0 rgba(51, 51, 51, 0.06);
+    background-color: #fff;
+    width: 30%;
+  }
+  .modules_card_body {
+    display: flex;
+    flex-flow: column;
+  }
+  .modules_card_title,
+  .modules_card_subtitle {
+    font-family: Assistant;
+    font-size: 18px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.56;
+    letter-spacing: normal;
+    color: #1b1d21;
+  }
+  .modules_card_price,
+  .modules_card_text {
+    padding: 10px;
+    display: flex;
+    flex-flow: column;
+    row-gap: 5px;
+  }
+  .modules_card_text {
+    background-color: #fafafa;
+  }
+  .modules_difficulty_section {
+    display: flex;
+  }
+  .modules_difficulty_levels {
+    display: flex;
+    justify-content: space-around;
+  }
+  .modules_progress_bar {
+    position: relative;
+    overflow-x: hidden;
+    margin-top: 8px;
+  }
+  .modules_progress_bar:before {
+    width: 100%;
+    height: 8px;
+    content: '';
+    display: block;
+    position: absolute;
+    background: #d8d8d8;
+    bottom: 0;
+    border-radius: 5px;
+  }
+  .modules_difficulty_bar {
+    width: 100%;
+    height: 8px;
+    background: #868686;
+    display: block;
+    position: relative;
+    border-radius: 5px;
+  }
+  .modules_difficulty_bar span {
+    position: absolute;
+    top: -30px;
+    font-size: 18px;
+    padding: 3px 0;
+    font-weight: 500;
+  }
+  .modules_card_difficulty,
+  .modules_card_note {
+    font-family: Assistant;
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #1b1d21;
+    margin: 0;
+  }
+  .modules_lei {
+    font-family: Assistant;
+    font-size: 18px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #af0101;
+  }
+  .modules_lei,
+  .modules_difficulty_levels p {
+    margin: 0;
+  }
+  .modules_button_container {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .button_add {
+    width: 150px;
+    height: 45px;
+    border: none;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    background-color: #fbb612;
+  }
+  .button_details {
+    width: 150px;
+    height: 45px;
+    border: solid 1px #fbb612;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    background-color: transparent;
+  }
+  .w-35 {
+    width: 35%;
+  }
+  .w-70 {
+    width: 70%;
+  }
+  .w-100 {
+    width: 100%;
+  }
+  .rg-30 {
+    row-gap: 30px;
+  }
+  @media only screen and (max-width: 768px) {
+    .modules_flex_container {
+      display: flex;
+      justify-content: space-evenly;
+      flex-wrap: wrap;
+      gap: 50px;
+    }
+    .modules_card {
+      border-radius: 12px;
+      box-shadow: 10px 32px 72px 0 rgba(51, 51, 51, 0.06);
+      background-color: #fff;
+      width: 90%;
+    }
+  }
+{%- endstyle -%}
+
+<div class="modules_section">
+  <div class="modules_heading_container">
+    <h1 class="modules_heading">Strength & Conditioning Coach</h1>
+  </div>
+  <div class="modules_flex_container">
+    <div class="modules_card">
+      <div class="modules_card_body">
+        <div class="modules_card_text">
+          <h3 class="modules_card_title">MODULUL 1</h3>
+          <p class="modules_card_subtitle">Strength & Conditioning for Juniors</p>
+          <div class="modules_difficulty_section">
+            <div style="width:30%">
+              <p class="modules_card_difficulty">Dificultate</p>
+            </div>
+            <div style="width:70%">
+              <div class="modules_progress_bar">
+                <div class="modules_difficulty_bar w-35">
+                  <span class="skill-count2"></span>
+                </div>
+              </div>
+              <div class="modules_difficulty_levels">
+                <p><strong>ușor</strong></p>
+                <p>mediu</p>
+                <p>mare</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modules_card_price">
+          <div>
+            <p class="modules_lei">
+              <span style="color:#101010; opacity: 0.63; text-decoration: line-through;">3000</span
+              >&emsp;&emsp;&emsp;2500 lei
+            </p>
+          </div>
+          <div class="modules_button_container">
+            <button class="button_add">
+              <a
+                role="link"
+                aria-disabled="true"
+                href="#"
+              ></a
+              >Adaugă în coș
+            </button>
+            <button class="button_details">
+              <a
+                role="link"
+                aria-disabled="true"
+                href="#"
+              ></a
+              >Detalii
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modules_card">
+      <div class="modules_card_body rg-30">
+        <div class="modules_card_text">
+          <h3 class="modules_card_title">MODULUL 2</h3>
+          <p class="modules_card_subtitle">Sport Strength Coach™</p>
+          <div class="modules_difficulty_section">
+            <div style="width:30%">
+              <p class="modules_card_difficulty">Dificultate</p>
+            </div>
+            <div style="width:70%">
+              <div class="modules_progress_bar">
+                <div class="modules_difficulty_bar w-70">
+                  <span class="skill-count2"></span>
+                </div>
+              </div>
+              <div class="modules_difficulty_levels">
+                <p>ușor</p>
+                <p><strong>mediu</strong></p>
+                <p>mare</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modules_card_price">
+          <div>
+            <p class="modules_card_note"><strong>Va fi lansat în curând</strong></p>
+          </div>
+          <div class="modules_button_container">
+            <button class="button_add">
+              <a
+                role="link"
+                aria-disabled="true"
+                href="#"
+              ></a
+              >Adaugă în coș
+            </button>
+            <button class="button_details">
+              <a
+                role="link"
+                aria-disabled="true"
+                href="#"
+              ></a
+              >Detalii
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modules_card">
+      <div class="modules_card_body rg-30">
+        <div class="modules_card_text">
+          <h3 class="modules_card_title">MODULUL 3</h3>
+          <p class="modules_card_subtitle">Sport Strength Coach™</p>
+          <div class="modules_difficulty_section">
+            <div style="width:30%">
+              <p class="modules_card_difficulty">Dificultate</p>
+            </div>
+            <div style="width:70%">
+              <div class="modules_progress_bar">
+                <div class="modules_difficulty_bar w-100">
+                  <span class="skill-count2"></span>
+                </div>
+              </div>
+              <div class="modules_difficulty_levels">
+                <p>ușor</p>
+                <p>mediu</p>
+                <p><strong>mare</strong></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modules_card_price">
+          <div>
+            <p class="modules_card_note"><strong>Va fi lansat în curând</strong></p>
+          </div>
+          <div>
+            <button class="button_details">
+              <a
+                role="link"
+                aria-disabled="true"
+                href="#"
+              ></a
+              >Sunt interesat
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modules_card">
+      <div class="modules_card_body rg-30">
+        <div class="modules_card_text">
+          <h3 class="modules_card_title">MODULUL 4</h3>
+          <p class="modules_card_subtitle">Exercise Specialist ™</p>
+          <div class="modules_difficulty_section">
+            <div style="width:30%">
+              <p class="modules_card_difficulty">Dificultate</p>
+            </div>
+            <div style="width:70%">
+              <div class="modules_progress_bar">
+                <div class="modules_difficulty_bar w-100">
+                  <span class="skill-count2"></span>
+                </div>
+              </div>
+              <div class="modules_difficulty_levels">
+                <p>ușor</p>
+                <p>mediu</p>
+                <p><strong>mare</strong></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modules_card_price">
+          <div>
+            <p class="modules_card_note"><strong>Va fi lansat în curând</strong></p>
+          </div>
+          <div class="modules_button_container">
+            <button class="button_details">
+              <a
+                role="link"
+                aria-disabled="true"
+                href="#"
+              ></a
+              >Sunt interesat
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modules_card">
+      <div class="modules_card_body rg-30">
+        <div class="modules_card_text">
+          <h3 class="modules_card_title">MODULUL 5</h3>
+          <p class="modules_card_subtitle">Recovery & Regeneration Tehniques ™</p>
+          <div class="modules_difficulty_section">
+            <div style="width:30%">
+              <p class="modules_card_difficulty">Dificultate</p>
+            </div>
+            <div style="width:70%">
+              <div class="modules_progress_bar">
+                <div class="modules_difficulty_bar w-100">
+                  <span class="skill-count2"></span>
+                </div>
+              </div>
+              <div class="modules_difficulty_levels">
+                <p>ușor</p>
+                <p>mediu</p>
+                <p><strong>mare</strong></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modules_card_price">
+          <div>
+            <p class="modules_card_note"><strong>Va fi lansat în curând</strong></p>
+          </div>
+          <div class="modules_button_container">
+            <button class="button_details">
+              <a
+                role="link"
+                aria-disabled="true"
+                href="#"
+              ></a
+              >Sunt interesat
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "ISCI modules",
+  "class": "section",
+  "tag": "section",
+  "settings": [],
+  "presets": [
+    {
+      "name": "ISCI modules",
+      "blocks": []
+    }
+  ]
+}
+{% endschema %}

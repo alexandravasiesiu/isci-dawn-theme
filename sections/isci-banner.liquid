@@ -1,0 +1,136 @@
+{%- style -%}
+  .banner_section {
+    display: flex;
+    width: 100%;
+    background-color: #591311;
+  }
+  .heading_banner_section {
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 50px 0;
+  }
+  .heading_banner {
+    font-family: Assistant;
+    font-size: 35px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.49;
+    letter-spacing: normal;
+    color: #fff;
+  }
+  .heading_subtitle {
+    font-family: Assistant;
+    font-size: 22px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.24;
+    letter-spacing: normal;
+    color: #f3eed9;
+  }
+  .heading_description {
+    font-family: Assistant;
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.7;
+    letter-spacing: normal;
+    color: #f3eed9;
+  }
+  .button_add {
+    width: 150px;
+    height: 45px;
+    border: none;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    background-color: #fbb612;
+  }
+  .image_banner_section {
+    width: 50%;
+  }
+  .image_banner_section img {
+    width: -webkit-fill-available;
+  }
+  .animation_box {
+    width: 143px;
+    height: 20px;
+    font-family: OpenSans;
+    font-size: 14px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.43;
+    letter-spacing: normal;
+    text-align: center;
+    color: #faad13;
+  }
+  .w-80 {
+    width: 80%;
+  }
+  @media only screen and (max-width: 768px) {
+    .banner_section {
+      display: flex;
+      background-color: #591311;
+      flex-wrap: wrap;
+    }
+    .heading_banner_section {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      width: 100%;
+    }
+    .image_banner_section {
+      width: 100%;
+    }
+  }
+{%- endstyle -%}
+
+<div class="banner_section">
+  <div class="heading_banner_section">
+    <div class="heading_banner_top w-80">
+      <p class="animation_box">au mai rămas 25 zile</p>
+    </div>
+    <div class="heading_banner_body w-80">
+      <p class="heading_banner">Strength & Conditioning Coach</p>
+      <p class="heading_subtitle">MODULUL 1: Strength & Conditioning for Juniors</p>
+      <p class="heading_description">
+        Maximizează potențialul de reușită al tinerilor sportivi antrenându-i metodic și respectând etapele lor de
+        dezvoltare.
+      </p>
+    </div>
+    <div class="heading_banner_bottom w-80">
+      <button class="button_add">
+        <a
+          role="link"
+          aria-disabled="true"
+          href="#"
+        ></a
+        >Adaugă în coș
+      </button>
+    </div>
+  </div>
+  <div class="image_banner_section">
+    <img src="{{ 'banner-img.png' | asset_url }}">
+  </div>
+</div>
+{% schema %}
+{
+  "name": "ISCI banner",
+  "class": "section",
+  "tag": "section",
+  "settings": [],
+  "presets": [
+    {
+      "name": "ISCI banner",
+      "blocks": []
+    }
+  ]
+}
+{% endschema %}

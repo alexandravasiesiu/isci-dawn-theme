@@ -1,0 +1,241 @@
+{%- style -%}
+  .rectangle {
+    width: 801px;
+    height: 452px;
+    margin: 255px 103px 137px 101px;
+    padding: 44px 2px 93px 67px;
+  }
+  .rectangle_title {
+    font-family: Assistant;
+    font-size: 25px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 0.18px;
+    color: #101010;
+  }
+  .rectangle_informations p {
+    font-family: Assistant;
+    font-size: 22px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 0.16px;
+    color: #101010;
+  }
+  .progress_redbar {
+    position: relative;
+    overflow-x: hidden;
+  }
+  .progress_redbar:before {
+    width: 100%;
+    height: 8px;
+    content: '';
+    display: block;
+    position: absolute;
+    background: #d8d8d8;
+    bottom: 0;
+    border-radius: 5px;
+  }
+  .difficulty_redbar {
+    width: 100%;
+    height: 8px;
+    background: #591311;
+    display: block;
+    position: relative;
+    border-radius: 5px;
+  }
+  .difficulty_bar span {
+    position: absolute;
+    top: -30px;
+    font-size: 18px;
+    padding: 3px 0;
+    font-weight: 500;
+  }
+  .difficulty_redlevels {
+    display: flex;
+    justify-content: space-around;
+  }
+  .rectangle_card {
+    width: 491px;
+    height: 759px;
+    margin: 126px 105px 1297px 26px;
+    padding: 0 0 60px;
+    box-shadow: 10px 32px 72px 0 rgba(51, 51, 51, 0.06);
+  }
+  .rectangle_card_top {
+    background-color: #101010;
+  }
+  .lei_top {
+    font-family: Assistant;
+    font-size: 30px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 0.21px;
+    color: #fff;
+  }
+  .rectangle_card_body h4 {
+    font-family: Assistant;
+    font-size: 20px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.8;
+    letter-spacing: normal;
+    color: #010101;
+  }
+  .rectangle_card_promotions p {
+    font-family: Assistant;
+    font-size: 20px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.8;
+    letter-spacing: normal;
+    color: #010101;
+  }
+  .Lei {
+    font-family: Assistant;
+    font-size: 18px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #af0101;
+  }
+  .promotions_date {
+    display: inline-flex;
+  }
+  .w-35 {
+    width: 35%;
+  }
+  .button_add {
+    width: 150px;
+    height: 45px;
+    border: none;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    background-color: #fbb612;
+  }
+  /* .stack-top {
+    z-index: 9;
+    margin: 20px;
+  } */
+{%- endstyle -%}
+
+<div class="information_boxes_section">
+  <div class="rectangle">
+    <h3 class="rectangle_title">Detalii curs</h3>
+    <div>
+      <div class="progress_redbar">
+        <div class="difficulty_redbar w-35">
+          <span class="skill-count2"></span>
+        </div>
+      </div>
+      <div class="difficulty_redlevels">
+        <p>ușor</p>
+        <p>mediu</p>
+        <p>mare</p>
+      </div>
+    </div>
+    <div class="rectangle_informations">
+      <p>
+        <span><img src="{{ 'clock.png' | asset_url }}"></span>Sâmbătă, 24 Septembrie, 10:00 - 18:00<br>
+        Duminică, 24 Septembrie, 10:00 - 18:00
+      </p>
+      <p>
+        <span><img src="{{ 'location.png' | asset_url }}"></span>ZenGym, Str. Iancu Jianu 13, Alba Iulia
+      </p>
+      <p>
+        <span><img src="{{ 'bed.png' | asset_url }}"></span>Recomandare cazare: Crema Residence, 0721.220.130
+      </p>
+    </div>
+  </div>
+  <div class="rectangle_card stack-top">
+    <div class="rectangle_card_top">
+      <p class="lei_top">
+        <span style="opacity: 0.63; text-decoration: line-through;">3000</span>&emsp;&emsp;&emsp;<b>1500 lei</b>
+      </p>
+    </div>
+    <div class="rectangle_card_body">
+      <div class="rectangle_card_promotions">
+        <h4>Prețuri promoționale</h4>
+        <p>
+          <span><img src="{{ 'reddot.png' | asset_url }}">14 - 24 Septembrie:&emsp;<strong>3000</strong></span>
+        </p>
+        <div class="promotions_date">
+          <p>
+            <span><img src="{{ 'reddot.png' | asset_url }}">03 - 13 Septembrie:</span>
+          </p>
+          <p class="Lei">
+            <span style="color:#101010; opacity: 0.63; text-decoration: line-through;">&emsp;3000</span>&emsp;2500 lei
+          </p>
+        </div>
+        <div class="promotions_date">
+          <p>
+            <span><img src="{{ 'reddot.png' | asset_url }}">23 August - 02 Septembrie:</span>
+          </p>
+          <p class="Lei">
+            <span style="color:#101010; opacity: 0.63; text-decoration: line-through;">&emsp;3000</span>&emsp;2000 lei
+          </p>
+        </div>
+        <div class="promotions_date">
+          <p>
+            <span><img src="{{ 'reddot.png' | asset_url }}">12 - 22 August:</span>
+          </p>
+          <p class="Lei">
+            <span style="color:#101010; opacity: 0.63; text-decoration: line-through;">&emsp;3000</span>&emsp;1500 lei
+          </p>
+        </div>
+      </div>
+      <h4>Ce vei învăța în acest modul?</h4>
+      <div class="rectangle_card_description">
+        <div>
+          <p>Generalități</p>
+          <p>Antrenamentul sportiv, sportivii, antrenorul</p>
+        </div>
+        <div>
+          <p>Etapele dezvoltării sportive</p>
+          <p>De la inițiere până la înalta performanță</p>
+        </div>
+        <div>
+          <p>Pregătirea generală vs. specializarea timpurie</p>
+        </div>
+        <div>
+          <p>Andrenarea tinerilor sportivi respectând etapele lor de dezvoltare</p>
+        </div>
+      </div>
+    </div>
+    <button class="button_add">
+      <a
+        role="link"
+        aria-disabled="true"
+        href="#"
+      ></a
+      >Adaugă în coș
+    </button>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "ISCI details section",
+  "class": "section",
+  "tag": "section",
+  "settings": [],
+  "presets": [
+    {
+      "name": "ISCI details section",
+      "blocks": []
+    }
+  ]
+}
+{% endschema %}
