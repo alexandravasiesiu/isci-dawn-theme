@@ -36,18 +36,15 @@
     justify-content: start;
     width: 90%;
   }
+  .multicolumn_heading {
+    width: 95%;
+    display: flex;
+    flex-flow: column;
+  }
   .heading_description,
   .multicolumn_list {
     padding: 0;
     width: 90%;
-  }
-  .button_add {
-    width: 206px;
-    height: 45px;
-  }
-  .button_other {
-    width: 206px;
-    height: 45px;
   }
   .section_title {
     font-family: Assistant;
@@ -123,6 +120,14 @@
   .multicolumn_rectangle_column {
     box-shadow: 10px 32px 72px 0 rgba(51, 51, 51, 0.06);
     background-color: #fff;
+    width: 45%;
+  }
+  .multicolumn_button_container {
+    display: flex;
+    gap: 70px;
+    justify-content: center;
+    width: 100%;
+    padding-bottom: 40px;
   }
   .multicolumn_button_add {
     border: none;
@@ -132,6 +137,8 @@
     display: inline-block;
     font-size: 16px;
     background-color: #fbb612;
+    width: 206px;
+    height: 45px;
   }
   .multicolumn_button_other {
     border: solid 1px #fbb612;
@@ -141,6 +148,8 @@
     display: inline-block;
     font-size: 16px;
     background-color: transparent;
+    width: 206px;
+    height: 45px;
   }
 
   @media only screen and (max-width: 768px) {
@@ -161,30 +170,12 @@
       flex-wrap: wrap;
     }
   }
-
-  @media only screen and (min-width: 768px) {
-    .multicolumn_heading {
-      width: 95%;
-      display: flex;
-      flex-flow: column;
-    }
-    .multicolumn_rectangle_column {
-      width: 45%;
-    }
-    .multicolumn_button_container {
-      display: flex;
-      gap: 70px;
-      justify-content: center;
-      width: 100%;
-      padding-bottom: 40px;
-    }
-  }
 {%- endstyle -%}
 
 {%- liquid
 
 -%}
-<div class="multicolumn_section">
+<div class="multicolumn_section page-width isci-padding-y">
   <div class="multicolumn_flex_container">
     <div class="multicolumn_heading">
       <div class="multicolumn_column">
@@ -270,14 +261,7 @@
       ></a
       >Adaugă în coș
     </button>
-    <button class="multicolumn_button_other">
-      <a
-        role="link"
-        aria-disabled="true"
-        href="#"
-      ></a
-      >Alte Cursuri
-    </button>
+    <button class="multicolumn_button_other" type="button">Alte Cursuri</button>
   </div>
 </div>
 {% schema %}

@@ -1,12 +1,9 @@
 {%- style -%}
-  .information_boxes_section {
-    padding: 50px 0;
-  }
   .flex_container {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: -webkit-fill-available;
+    width: 100%;
   }
   .rectangle {
     width: 50%;
@@ -218,7 +215,7 @@
    } */
 {%- endstyle -%}
 
-<div class="information_boxes_section">
+<div class="information_boxes_section page-width isci-padding-y">
   <div class="flex_container">
     <div class="rectangle">
       <div>
@@ -321,14 +318,7 @@
           </ul>
         </div>
         <div class="information_button_container">
-          <button class="information_button_add">
-            <a
-              role="link"
-              aria-disabled="true"
-              href="#"
-            ></a
-            >Adaugă în coș
-          </button>
+          <button class="information_button_add" type="button">Adaugă în coș</button>
         </div>
       </div>
     </div>

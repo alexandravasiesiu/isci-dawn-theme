@@ -1,0 +1,8 @@
+.isci-padding-y {
+  padding: 36px 0;
+}
+@media only screen and (max-width: 768px) {
+  .isci-padding-y {
+    padding: 27px 0;
+  }
+}

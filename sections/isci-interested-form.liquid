@@ -31,6 +31,17 @@
     flex-flow: column;
     gap: 50px;
   }
+  .interested_rectangle_heading p {
+    font-family: Assistant;
+    font-size: 20px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.4;
+    letter-spacing: normal;
+    text-align: center;
+    color: #1b1d21;
+  }
   .interested_form {
     display: flex;
     gap: 10px;
@@ -38,6 +49,7 @@
   }
   .interested_form_description {
     display: flex;
+    justify-content: center;
   }
   .interested_form_description p {
     font-family: Assistant;
@@ -51,8 +63,9 @@
   }
   .interested_form_boxes {
     display: flex;
-    justify-content: space-between;
-    gap: 10px;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
   }
   .interested_box {
     display: flex;
@@ -68,6 +81,7 @@
   .interested_form_bottom {
     display: flex;
     justify-content: center;
+    width: 100%;
   }
   .button_submit {
     width: 238px;
@@ -77,19 +91,35 @@
     background-color: #fbb612;
     border: 0;
   }
+  @media only screen and (max-width: 768px) {
+    .interested_form_boxes {
+      display: flex;
+      justify-content: space-evenly;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+  }
 {%- endstyle -%}
 
 <div class="interested_section">
   <div class="interested_heading_container">
     <p class="interested_heading">Sunt interesat</p>
   </div>
-  <div class="interested_container">
+  <div class="interested_container page-width isci-padding-y">
     <div class="interested_rectangle">
+      <div class="interested_rectangle_heading">
+        <p>
+          <u>
+            <strong> Strength & Conditioning Coach </strong>
+          </u>
+        </p>
+        <p>Modulul 2 - Sport Strength Coach&trade;</p>
+      </div>
       <div class="interested_form">
         <div class="interested_form_description">
           <p>Informații personale</p>
         </div>
-        <div class="interested_form_boxes">
+        <form class="interested_form_boxes">
           <div class="interested_box">
             <input class="data_box" type="text" id="full_name" name="FullName" placeholder="Nume complet*">
           </div>
@@ -99,17 +129,10 @@
           <div class="interested_box">
             <input class="data_box" type="text" id="phone" name="Tel" placeholder="Telefon*">
           </div>
-        </div>
-      </div>
-      <div class="interested_form_bottom">
-        <button class="button_submit">
-          <a
-            role="link"
-            aria-disabled="true"
-            href="#"
-          ></a
-          >TRIMITE
-        </button>
+          <div class="interested_form_bottom">
+            <button class="button_submit" type="submit">TRIMITE</button>
+          </div>
+        </form>
       </div>
     </div>
   </div>

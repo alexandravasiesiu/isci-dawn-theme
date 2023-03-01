@@ -3,7 +3,6 @@
     display: flex;
     flex-flow: column;
     row-gap: 50px;
-    padding: 50px 0;
   }
   .heading_container {
     display: flex;
@@ -140,7 +139,7 @@
     justify-content: space-between;
     width: 100%;
   }
-  .button_add {
+  .cards_button_add {
     width: 150px;
     height: 45px;
     border: none;
@@ -151,7 +150,7 @@
     font-size: 16px;
     background-color: #fbb612;
   }
-  .button_details {
+  .cards_button_details {
     width: 150px;
     height: 45px;
     border: solid 1px #fbb612;
@@ -185,11 +184,9 @@
       width: -webkit-fill-available;
     }
   }
-  @media only screen and (min-width: 768px) {
-  }
 {%- endstyle -%}
 
-<div class="cards_with_image_section">
+<div class="cards_with_image_section page-width isci-padding-y">
   <div class="heading_container">
     <h1 class="section_title">ALTE CURSURI</h1>
     <div class="Line-3"><hr class="no-margin"></div>
@@ -229,21 +226,14 @@
             </p>
           </div>
           <div class="cards_button_container">
-            <button class="cards_button_add">
-              <a
-                role="link"
-                aria-disabled="true"
-                href="#"
-              ></a
-              >Adaugă în coș
-            </button>
+            <button class="cards_button_add" type="button">Adaugă în coș</button>
             <button class="cards_button_details">
               <a
                 role="link"
                 aria-disabled="true"
                 href="#"
-              ></a
-              >Detalii
+              ></a>
+              Detalii
             </button>
           </div>
         </div>
@@ -283,21 +273,14 @@
             </p>
           </div>
           <div class="cards_button_container">
-            <button class="cards_button_add">
-              <a
-                role="link"
-                aria-disabled="true"
-                href="#"
-              ></a
-              >Adaugă în coș
-            </button>
+            <button class="cards_button_add" type="button">Adaugă în coș</button>
             <button class="cards_button_details">
               <a
                 role="link"
                 aria-disabled="true"
                 href="#"
-              ></a
-              >Detalii
+              ></a>
+              Detalii
             </button>
           </div>
         </div>
