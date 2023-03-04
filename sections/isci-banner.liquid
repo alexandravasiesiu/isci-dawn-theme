@@ -2,7 +2,7 @@
   .banner_section {
     display: flex;
     width: 100%;
-    background-color: #591311;
+    background-color: {{ section.settings.banner_background }};
   }
   .heading_banner_section {
     width: 50%;
@@ -96,22 +96,54 @@
 <div class="banner_section">
   <div class="heading_banner_section">
     <div class="heading_banner_top w-80">
-      <p class="animation_box">au mai rămas 25 zile</p>
+      <p class="animation_box">
+        {% assign end_date = section.settings.end_date %}
+        {% if end_date != blank %}
+          {% assign today = 'now' | date: '%s' %}
+          {% assign end = end_date | date: '%s' %}
+          {% assign difference = end | minus: today %}
+          {% assign days = difference | divided_by: 86400 %}
+          {% assign weeks = days | divided_by: 7 %}
+          {% assign months = days | divided_by: 30 %}
+          au mai rămas
+          {% if months > 0 %}
+            {{ months }}
+            {% if months > 1 %} luni {% else %} luna {% endif %}
+          {% elsif weeks > 0 %}
+            {{ weeks }}
+            {% if weeks > 1 %}saptamani{% else %}saptamana{% endif %}
+          {% else %}
+            {{ days }}
+            {% if days > 1 %}zile{% else %} zi {% endif %}
+          {% endif %}
+        {% endif %}
+      </p>
     </div>
     <div class="heading_banner_body w-80">
-      <p class="heading_banner">Strength & Conditioning Coach</p>
-      <p class="heading_subtitle">MODULUL 1: Strength & Conditioning for Juniors</p>
+      <p class="heading_banner">{{ section.settings.title }}</p>
+      <p class="heading_subtitle">{{ section.settings.subtitle }}</p>
       <p class="heading_banner_description">
-        Maximizează potențialul de reușită al tinerilor sportivi antrenându-i metodic și respectând etapele lor de
-        dezvoltare.
+        {{ section.settings.description }}
       </p>
     </div>
     <div class="heading_banner_bottom w-80">
-      <button class="banner_button_add" type="button">Adaugă în coș</button>
+      {%- if product.selected_or_first_available_variant.available %}
+        {%- form 'product', product, class: 'form', novalidate: 'novalidate', data-type: 'add-to-cart-form' -%}
+          <input type="hidden" name="quantity" value="1">
+          <input
+            type="hidden"
+            name="id"
+            value="{{ product.selected_or_first_available_variant.id }}"
+          >
+          <button class="banner_button_add" name="add" type="submit">Adaugă în coș</button>
+        {%- endform -%}
+      {%- else -%}
+        {{ 'products.product.sold_out' | t }}
+      {% endif %}
     </div>
   </div>
   <div class="image_banner_section">
-    <img src="{{ 'banner-img.png' | asset_url }}">
+    <img src="{{ section.settings.banner_image | img_url: 'master' }}">
   </div>
 </div>
 {% schema %}
@@ -119,7 +151,39 @@
   "name": "ISCI banner",
   "class": "section",
   "tag": "section",
-  "settings": [],
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "t:sections.isci-banner.settings.title.label"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "t:sections.isci-banner.settings.subtitle.label"
+    },
+    {
+      "type": "text",
+      "id": "description",
+      "label": "t:sections.isci-banner.settings.description.label"
+    },
+    {
+      "type": "image_picker",
+      "id": "banner_image",
+      "label": "t:sections.isci-banner.settings.banner_image.label"
+    },
+    {
+      "type": "color",
+      "id": "banner_background",
+      "label": "t:sections.isci-banner.settings.banner_background.label",
+      "default": "#591311"
+     },      
+    {
+      "type": "text",
+      "id": "end_date",
+      "label": "t:sections.isci-banner.settings.end_date.label"
+    }
+  ],
   "presets": [
     {
       "name": "ISCI banner",
