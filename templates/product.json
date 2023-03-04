@@ -1,7 +1,19 @@
 {
   "sections": {
+    "2210767c-64d3-4943-924b-02bde0cdd27c": {
+      "type": "isci-banner",
+      "settings": {
+        "title": "Strength & Conditioning Coach",
+        "subtitle": "MODULUL 1: Strength & Conditioning for Juniors",
+        "description": "Maximizează potențialul de reușită al tinerilor sportivi antrenându-i metodic și respectând etapele lor de        dezvoltare.",
+        "banner_image": "shopify:\/\/shop_images\/banner-img.png",
+        "banner_background": "#591311",
+        "end_date": "03-05-2023"
+      }
+    },
     "main": {
       "type": "main-product",
+      "disabled": true,
       "blocks": {
         "vendor": {
           "type": "text",
@@ -12,11 +24,13 @@
         },
         "title": {
           "type": "title",
-          "settings": {}
+          "settings": {
+          }
         },
         "price": {
           "type": "price",
-          "settings": {}
+          "settings": {
+          }
         },
         "variant_picker": {
           "type": "variant_picker",
@@ -26,7 +40,8 @@
         },
         "quantity_selector": {
           "type": "quantity_selector",
-          "settings": {}
+          "settings": {
+          }
         },
         "buy_buttons": {
           "type": "buy_buttons",
@@ -36,7 +51,8 @@
         },
         "description": {
           "type": "description",
-          "settings": {}
+          "settings": {
+          }
         },
         "collapsible-row-0": {
           "type": "collapsible_tab",
@@ -107,46 +123,15 @@
         "padding_bottom": 12
       }
     },
-    "image-with-text": {
-      "type": "image-with-text",
-      "blocks": {
-        "image-with-text-0": {
-          "type": "heading",
-          "settings": {
-            "heading": "Isci Image with text",
-            "heading_size": "h1"
-          }
-        },
-        "image-with-text-1": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
-            "text_style": "body"
-          }
-        }
-      },
-      "block_order": ["image-with-text-0", "image-with-text-1"],
-      "settings": {
-        "height": "small",
-        "desktop_image_width": "medium",
-        "layout": "text_first",
-        "desktop_content_position": "top",
-        "desktop_content_alignment": "left",
-        "content_layout": "no-overlap",
-        "color_scheme": "background-2",
-        "mobile_content_alignment": "left",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
     "multicolumn": {
       "type": "multicolumn",
+      "disabled": true,
       "blocks": {
         "column-0": {
           "type": "column",
           "settings": {
             "title": "Free Shipping",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
             "link_label": "",
             "link": ""
           }
@@ -155,13 +140,16 @@
           "type": "column",
           "settings": {
             "title": "Hassle-Free Exchanges",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
             "link_label": "",
             "link": ""
           }
         }
       },
-      "block_order": ["column-0", "column-1"],
+      "block_order": [
+        "column-0",
+        "column-1"
+      ],
       "settings": {
         "title": "",
         "heading_size": "h1",
@@ -181,6 +169,7 @@
     },
     "product-recommendations": {
       "type": "product-recommendations",
+      "disabled": true,
       "settings": {
         "heading": "You may also like",
         "heading_size": "h2",
@@ -195,7 +184,96 @@
         "padding_top": 36,
         "padding_bottom": 28
       }
+    },
+    "167b8362-b864-41b9-813f-eae01bd105a8": {
+      "type": "isci-text-with-image",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/trainer.png",
+        "title": "LECTOR: Lucian Nicolescu, Director ISCI România",
+        "subtitle": "Experiențe",
+        "content": "<div class=\"competency\">\n      <div class=\"competency_column\">\n        <h6 class=\"competency_column_title no-margin\">Fitness<\/h6>\n        <p class=\"competency_column_subtitle no-margin\">Răzvan Gabriel Ion, Men's Physique:<\/p>\n        <ul class=\"competency_column_list\">\n          <li>locul 1 la Campionatul Balcanic, 2020;<\/li>\n          <li>locul 1 la Grand Prix Pro Nutrition, 2020;<\/li>\n          <li>locul 1 la Campionatul Balcanic, 2021.<\/li>\n        <\/ul>\n      <\/div>\n      <div class=\"competency_column\">\n        <h6 class=\"competency_column_title no-margin\">Tenis<\/h6>\n        <ul class=\"competency_column_list\">\n          <li>Echipa României de Cupa Davis<\/li>\n          <li>Horia Tecău (locul 1 mondial ATP Doubles)<\/li>\n          <li>Marius Copil (locul 56 mondial ATP)<\/li>\n          <li>Gabriela Ruse (locul 57 mondial WTA)<\/li>\n        <\/ul>\n      <\/div>\n      <div class=\"competency_column\">\n        <h6 class=\"competency_column_title no-margin\">Gimnastică<\/h6>\n        <ul class=\"competency_column_list\">\n          <li>Lotul Român de Gimnastică Artistică Masculină<\/li>\n          <li>Lotul Român de Gimnastică Artistică Feminină<\/li>\n        <\/ul>\n      <\/div>\n      <div class=\"competency_column\">\n        <h6 class=\"competency_column_title no-margin\">Atletism<\/h6>\n        <ul class=\"competency_column_list\">\n          <li>Rareș Toader, aruncarea greutății, (locul 22 mondial)<\/li>\n        <\/ul>\n      <\/div>\n    <\/div>"
+      }
+    },
+    "d6db0b2a-2eb0-4d9b-9247-f67aa86b4061": {
+      "type": "isci-information-boxes",
+      "settings": {
+        "price": "3000",
+        "discount_price": "1500 lei",
+        "difficulty": "mediu",
+        "rectangle_informations": "<div class=\"rectangle_informations\">\n          <div>\n            <span>\n              <div><img src=\"{{ 'clock.png' | asset_url }}\" style=\"margin-right:5px;\"><\/div>\n            <\/span>\n            <p>\n              Sâmbătă, 24 Septembrie, 10:00 - 18:00<br>\n              Duminică, 24 Septembrie, 10:00 - 18:00\n            <\/p>\n          <\/div>\n          <div>\n            <span>\n              <div><img src=\"{{ 'location.png' | asset_url }}\" stayle=\"margin-right: 5px;\"><\/div>\n            <\/span>\n            <p>ZenGym, Str. Iancu Jianu 13, Alba Iulia<\/p>\n          <\/div>\n          <div>\n            <span>\n              <div><img src=\"{{ 'bed.png' | asset_url }}\"><\/div>\n            <\/span>\n            <p>Recomandare cazare: Crema Residence, 0721.220.130<\/p>\n          <\/div>\n        <\/div>",
+        "rectangle_card_body": "<div class=\"rectangle_card_details\">\n          <h4>Prețuri promoționale<\/h4>\n          <div class=\"promotion_data\">\n            <p class=\"promotion_data_line\">\n              <span><img src=\"{{ 'reddot.png' | asset_url }}\">&nbsp;14 - 24 Septembrie:&nbsp;<\/span>\n            <\/p>\n            <p class=\"Lei\" style=\"color:#101010;\">3000<\/p>\n          <\/div>\n          <div class=\"promotion_data\">\n            <p class=\"promotion_data_line\">\n              <span><img src=\"{{ 'reddot.png' | asset_url }}\">&nbsp;03 - 13 Septembrie:&nbsp;<\/span>\n            <\/p>\n            <p class=\"Lei\">\n              <span style=\"color:#101010; opacity: 0.63; text-decoration: line-through;\">3000<\/span>&emsp;2500 lei\n            <\/p>\n          <\/div>\n          <div class=\"promotion_data\">\n            <p class=\"promotion_data_line\">\n              <span><img src=\"{{ 'reddot.png' | asset_url }}\">&nbsp;23 August - 02 Septembrie:&nbsp;<\/span>\n            <\/p>\n            <p class=\"Lei\">\n              <span style=\"color:#101010; opacity: 0.63; text-decoration: line-through;\">3000<\/span>&emsp;2000 lei\n            <\/p>\n          <\/div>\n          <div class=\"promotion_data\">\n            <p class=\"promotion_data_line\">\n              <span><img src=\"{{ 'reddot.png' | asset_url }}\">&nbsp;12 - 22 August:&nbsp;<\/span>\n            <\/p>\n            <p class=\"Lei\">\n              <span style=\"color:#101010; opacity: 0.63; text-decoration: line-through;\">3000<\/span>&emsp;1500 lei\n            <\/p>\n          <\/div>\n        <\/div>\n        <div class=\"rectangle_card_details\">\n          <h4>Ce vei învăța în acest modul?<\/h4>\n          <ul class=\"rectangle_card_description\">\n            <li>\n              Generalități<br>\n              <span style=\"opacity:0.84;font-size:14px;line-height:1.71;\">\n                Antrenamentul sportiv, sportivii, antrenorul<\/span\n              >\n            <\/li>\n            <li>\n              Etapele dezvoltării sportive<br>\n              <span style=\"opacity:0.84;font-size:14px;line-height:1.71;\">\n                De la inițiere până la înalta performanță<\/span\n              >\n            <\/li>\n            <li>Pregătirea generală vs. specializarea timpurie<\/li>\n            <li>Andrenarea tinerilor sportivi respectând etapele lor de dezvoltare<\/li>\n          <\/ul>\n        <\/div>"
+      }
+    },
+    "0e20792b-3989-4e91-9a4f-90541bee2a7c": {
+      "type": "isci-multicolumn",
+      "settings": {
+        "title": "DESCRIEREA CURSULUI",
+        "description": "<h4 class=\"heading_description_title w-95\"><strong>Cui îi este destinat acest modul?<\/strong><\/h4>\n        <ul class=\"heading_description w-95\">\n          <li>\n            Oricărui antrenor, preparator, instructor, sau părinte care este implicat în pregătirea sportivă a\n            tinerilor.\n          <\/li>\n        <\/ul>\n        <h4 class=\"heading_description_title w-95\"><strong>Ce vei învăța în acest modul?<\/strong><\/h4>\n        <ul class=\"heading_description w-95\">\n          <li>Cum să maximizezi potențialul de reușită a tinerilor sportivi antrenându-i metodic.<\/li>\n        <\/ul>",
+        "col1": "<div class=\"multicolumn_rectangle_column\">\n      <div class=\"multicolumn_column\">\n        <h4 class=\"multicolumn_column_title\"><strong>1.GENERALITĂȚI<\/strong><\/h4>\n        <ul class=\"multicolumn_list\">\n          <li>Antrenamentul sportiv: proces educativ sau proces de adaptări fiziologice?<\/li>\n          <li>Sportivi: tipuri de personalități întâlnite și modalități de abordare.<\/li>\n          <li>Antrenorul: pedagogia și comunicarea în sport<\/li>\n        <\/ul>\n      <\/div>\n    <\/div>",
+        "col2": "<div class=\"multicolumn_rectangle_column\">\n      <div class=\"multicolumn_column\">\n        <h4 class=\"multicolumn_column_title\"><strong>1.GENERALITĂȚI<\/strong><\/h4>\n        <ul class=\"multicolumn_list\">\n          <li>Antrenamentul sportiv: proces educativ sau proces de adaptări fiziologice?<\/li>\n          <li>Sportivi: tipuri de personalități întâlnite și modalități de abordare.<\/li>\n          <li>Antrenorul: pedagogia și comunicarea în sport<\/li>\n        <\/ul>\n      <\/div>\n    <\/div>",
+        "col3": "<div class=\"multicolumn_rectangle_column\">\n      <div class=\"multicolumn_column\">\n        <h4 class=\"multicolumn_column_title\"><strong>2.ETAPELE DEZVOLTĂRII SPORTIVE<\/strong><\/h4>\n        <ul class=\"multicolumn_list\">\n          <li>Vârstele etapelor în diferite sporturi<\/li>\n          <li>Inițierea<\/li>\n          <li>Formarea<\/li>\n          <li>Specializarea<\/li>\n          <li>Înalta performanță<\/li>\n        <\/ul>\n      <\/div>\n    <\/div>",
+        "col4": "<div class=\"multicolumn_rectangle_column\">\n      <div class=\"multicolumn_column\">\n        <h4 class=\"multicolumn_column_title\"><strong>3.PREGĂTIREA GENERALĂ vs. SPECIALIZAREA TIMPURIE<\/strong><\/h4>\n        <ul class=\"multicolumn_list\">\n          <li>Diferențe și rezultate obținute cu Modelul Rusesc vs. Modelul American<\/li>\n          <li>\n            Decizia Chinei în anul 2020 de a forma unele loturi naționale în funcție de rezultatele testelor fizice\n            generale, ignorând rezultatele obținute de sportivi în competiții.\n          <\/li>\n          <li>\n            Fenomenul puseului de creștere a unor tineri sportivi în perioada izolării cauzată de pandemia de Covid.\n            Cauze și concluzii\n          <\/li>\n        <\/ul>\n      <\/div>\n    <\/div>",
+        "cursuri": "shopify:\/\/collections\/all"
+      }
+    },
+    "c667f9d3-0d9a-4fbf-b572-feffd3e44b95": {
+      "type": "isci-cards-with-image",
+      "blocks": {
+        "template--16998129369381__c667f9d3-0d9a-4fbf-b572-feffd3e44b95-1677957096f17c9a19-0": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/card-img1.jpg",
+            "title": "Strength & Conditioning Coach",
+            "subtitlu": "Modulul 2 - Strength & Conditioning for Juniors",
+            "difficulty": "usor",
+            "price": "3000",
+            "discount_price": "1500 lei",
+            "product": "strength-conditioning"
+          }
+        },
+        "template--16998129369381__c667f9d3-0d9a-4fbf-b572-feffd3e44b95-1677957096f17c9a19-1": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/card-img2.jpg",
+            "title": "Advanced Recovery Protocols",
+            "subtitlu": "Modulul 1 - Anatomie Funcțională & Biomecanică",
+            "difficulty": "mediu",
+            "price": "3000",
+            "discount_price": "2500 lei",
+            "product": "strength-conditioning"
+          }
+        },
+        "template--16998129369381__c667f9d3-0d9a-4fbf-b572-feffd3e44b95-1677957096f17c9a19-2": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/card-img3.jpg",
+            "title": "Elite Fitness Instructor",
+            "subtitlu": "Modulul 1 - Instructor Fitness",
+            "difficulty": "dificil",
+            "price": "",
+            "discount_price": "",
+            "product": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--16998129369381__c667f9d3-0d9a-4fbf-b572-feffd3e44b95-1677957096f17c9a19-0",
+        "template--16998129369381__c667f9d3-0d9a-4fbf-b572-feffd3e44b95-1677957096f17c9a19-1",
+        "template--16998129369381__c667f9d3-0d9a-4fbf-b572-feffd3e44b95-1677957096f17c9a19-2"
+      ],
+      "settings": {
+        "title": ""
+      }
     }
   },
-  "order": ["main", "image-with-text", "multicolumn", "product-recommendations"]
+  "order": [
+    "2210767c-64d3-4943-924b-02bde0cdd27c",
+    "main",
+    "multicolumn",
+    "product-recommendations",
+    "167b8362-b864-41b9-813f-eae01bd105a8",
+    "d6db0b2a-2eb0-4d9b-9247-f67aa86b4061",
+    "0e20792b-3989-4e91-9a4f-90541bee2a7c",
+    "c667f9d3-0d9a-4fbf-b572-feffd3e44b95"
+  ]
 }

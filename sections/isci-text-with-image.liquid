@@ -121,48 +121,51 @@
 {%- endstyle -%}
 <div class="text_image_section page-width isci-padding-y">
   <div class="image_container">
-    <img src="{{ 'trainer.png' | asset_url }}">
+    <img src="{{ section.settings.image | img_url: 'master' }}">
   </div>
   <div class="rectangle_container">
     <div class="rectangle_container_heading">
-      <h3 class="heading no-margin">LECTOR: Lucian Nicolescu, Director ISCI România</h3>
+      <h3 class="heading no-margin">{{ section.settings.title }}</h3>
     </div>
     <div class="rectangle_container_subtitle">
-      <h5 class="subtitle no-margin">Experiențe</h5>
+      <h5 class="subtitle no-margin">{{ section.settings.subtitle }}</h5>
     </div>
-    <div class="competency">
-      <div class="competency_column">
-        <h6 class="competency_column_title no-margin">Fitness</h6>
-        <p class="competency_column_subtitle no-margin">Răzvan Gabriel Ion, Men's Physique:</p>
-        <ul class="competency_column_list">
-          <li>locul 1 la Campionatul Balcanic, 2020;</li>
-          <li>locul 1 la Grand Prix Pro Nutrition, 2020;</li>
-          <li>locul 1 la Campionatul Balcanic, 2021.</li>
-        </ul>
+    {{ section.settings.content }}
+    {% comment %}
+      <div class="competency">
+        <div class="competency_column">
+          <h6 class="competency_column_title no-margin">Fitness</h6>
+          <p class="competency_column_subtitle no-margin">Răzvan Gabriel Ion, Men's Physique:</p>
+          <ul class="competency_column_list">
+            <li>locul 1 la Campionatul Balcanic, 2020;</li>
+            <li>locul 1 la Grand Prix Pro Nutrition, 2020;</li>
+            <li>locul 1 la Campionatul Balcanic, 2021.</li>
+          </ul>
+        </div>
+        <div class="competency_column">
+          <h6 class="competency_column_title no-margin">Tenis</h6>
+          <ul class="competency_column_list">
+            <li>Echipa României de Cupa Davis</li>
+            <li>Horia Tecău (locul 1 mondial ATP Doubles)</li>
+            <li>Marius Copil (locul 56 mondial ATP)</li>
+            <li>Gabriela Ruse (locul 57 mondial WTA)</li>
+          </ul>
+        </div>
+        <div class="competency_column">
+          <h6 class="competency_column_title no-margin">Gimnastică</h6>
+          <ul class="competency_column_list">
+            <li>Lotul Român de Gimnastică Artistică Masculină</li>
+            <li>Lotul Român de Gimnastică Artistică Feminină</li>
+          </ul>
+        </div>
+        <div class="competency_column">
+          <h6 class="competency_column_title no-margin">Atletism</h6>
+          <ul class="competency_column_list">
+            <li>Rareș Toader, aruncarea greutății, (locul 22 mondial)</li>
+          </ul>
+        </div>
       </div>
-      <div class="competency_column">
-        <h6 class="competency_column_title no-margin">Tenis</h6>
-        <ul class="competency_column_list">
-          <li>Echipa României de Cupa Davis</li>
-          <li>Horia Tecău (locul 1 mondial ATP Doubles)</li>
-          <li>Marius Copil (locul 56 mondial ATP)</li>
-          <li>Gabriela Ruse (locul 57 mondial WTA)</li>
-        </ul>
-      </div>
-      <div class="competency_column">
-        <h6 class="competency_column_title no-margin">Gimnastică</h6>
-        <ul class="competency_column_list">
-          <li>Lotul Român de Gimnastică Artistică Masculină</li>
-          <li>Lotul Român de Gimnastică Artistică Feminină</li>
-        </ul>
-      </div>
-      <div class="competency_column">
-        <h6 class="competency_column_title no-margin">Atletism</h6>
-        <ul class="competency_column_list">
-          <li>Rareș Toader, aruncarea greutății, (locul 22 mondial)</li>
-        </ul>
-      </div>
-    </div>
+    {% endcomment %}
   </div>
 </div>
 
@@ -171,7 +174,29 @@
   "name": "ISCI text with image",
   "class": "section",
   "tag": "section",
-  "settings": [],
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "t:sections.isci-text-with-image.settings.image.label"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "t:sections.isci-text-with-image.settings.title.label"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "t:sections.isci-text-with-image.settings.subtitle.label"
+    },
+
+    {
+      "type": "html",
+      "id": "content",
+      "label": "t:sections.isci-text-with-image.settings.content.label"
+    }
+  ],
   "presets": [
     {
       "name": "ISCI text with image",

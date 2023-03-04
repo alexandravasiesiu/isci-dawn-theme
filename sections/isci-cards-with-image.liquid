@@ -164,6 +164,12 @@
   .w-35 {
     width: 35%;
   }
+  .w-70 {
+    width: 70%;
+  }
+  .w-100 {
+    width: 100%;
+  }
   .rg-30 {
     row-gap: 30px;
   }
@@ -188,147 +194,107 @@
 
 <div class="cards_with_image_section page-width isci-padding-y">
   <div class="heading_container">
-    <h1 class="section_title">ALTE CURSURI</h1>
+    <h1 class="section_title">{{ section.settings.title }}</h1>
     <div class="Line-3"><hr class="no-margin"></div>
   </div>
   <div class="cards_flex_container">
-    <div class="card">
-      <div class="card_image">
-        <img src="{{ 'card-img1.jpg' | asset_url }}">
-      </div>
-      <div class="card_body">
-        <div class="card_text">
-          <h3 class="card_title">Strength & Conditioning Coach</h3>
-          <p class="card_subtitle">Modulul 2 - Strength & Conditioning for Juniors</p>
-          <div class="difficulty_section">
-            <div style="width:30%">
-              <p class="card_difficulty">Dificultate</p>
-            </div>
-            <div style="width:70%">
-              <div class="progress_bar">
-                <div class="difficulty_bar w-35">
-                  <span class="skill-count2"></span>
+    {%- for block in section.blocks -%}
+      <div class="card">
+        {% if block.settings.image %}
+          <div class="card_image">
+            <img src="{{ block.settings.image | img_url: 'master' }}">
+          </div>
+        {% endif %}
+        <div class="card_body">
+          <div class="card_text">
+            <h3 class="card_title">{{ block.settings.title }}</h3>
+            <p class="card_subtitle">{{ block.settings.subtitlu }}</p>
+            <div class="difficulty_section">
+              <div style="width:30%">
+                <p class="card_difficulty">Dificultate</p>
+              </div>
+              <div style="width:70%">
+                <div class="progress_bar">
+                  <div
+                    class="
+                      difficulty_bar
+                      {% if block.settings.difficulty == 'usor' %}
+                        w-35
+                      {% endif %}
+                      {% if block.settings.difficulty == 'mediu' %}
+                        w-70
+                      {% endif %}
+                      {% if block.settings.difficulty == 'dificil' %}
+                        w-100
+                      {% endif %}
+                    "
+                  >
+                    <span class="skill-count2"></span>
+                  </div>
+                </div>
+                <div class="difficulty_levels">
+                  <p><strong>ușor</strong></p>
+                  <p>mediu</p>
+                  <p>mare</p>
                 </div>
               </div>
-              <div class="difficulty_levels">
-                <p><strong>ușor</strong></p>
-                <p>mediu</p>
-                <p>mare</p>
-              </div>
             </div>
           </div>
-        </div>
-        <div class="card_price">
-          <div>
-            <p class="Lei">
-              <span style="color:#101010; opacity: 0.63; text-decoration: line-through;">3000</span
-              >&emsp;&emsp;&emsp;2500 lei
-            </p>
-          </div>
-          <div class="cards_button_container">
-            <button class="cards_button_add" type="button">Adaugă în coș</button>
-            <button class="cards_button_details">
-              <a
-                role="link"
-                aria-disabled="true"
-                href="#"
-              ></a>
-              Detalii
-            </button>
+          <div class="card_price">
+            {% if block.settings.soon %}
+              <div>
+                <p class="card_note"><strong>Va fi lansat în curând</strong></p>
+              </div>
+              <div>
+                <a
+                  class="cards_button_details"
+                  role="link"
+                  aria-disabled="true"
+                  href="{{block.settings.product.url}}"
+                >
+                  Sunt interesat
+                </a>
+              </div>
+            {% else %}
+              <div>
+                <p class="Lei">
+                  <span style="color:#101010; opacity: 0.63; text-decoration: line-through;">
+                    {{ block.settings.price -}}</span
+                  >&emsp;&emsp;&emsp; {{ block.settings.discount_price }}
+                </p>
+              </div>
+              <div class="cards_button_container">
+                {%- if block.settings.product
+                  and block.settings.product.selected_or_first_available_variant.available
+                %}
+                  {%- form 'product',
+                    block.settings.product,
+                    class: 'form',
+                    novalidate: 'novalidate',
+                    data-type: 'add-to-cart-form'
+                  -%}
+                    <input type="hidden" name="quantity" value="1">
+                    <input
+                      type="hidden"
+                      name="id"
+                      value="{{ block.settings.product.selected_or_first_available_variant.id }}"
+                    >
+                    <button class="cards_button_add" name="add" type="submit">Adaugă în coș</button>
+                  {%- endform -%}
+                {% endif %}
+                <a
+                  class="cards_button_details"
+                  role="link"
+                  href="{{ block.settings.product.url }}"
+                >
+                  Detalii
+                </a>
+              </div>
+            {% endif %}
           </div>
         </div>
       </div>
-    </div>
-    <div class="card">
-      <div class="card_image">
-        <img src="{{ 'card-img2.jpg' | asset_url }}">
-      </div>
-      <div class="card_body">
-        <div class="card_text">
-          <h3 class="card_title">Advanced Recovery Protocols</h3>
-          <p class="card_subtitle">Modulul 1 - Anatomie Funcțională & Biomecanică</p>
-          <div class="difficulty_section">
-            <div style="width:30%">
-              <p class="card_difficulty">Dificultate</p>
-            </div>
-            <div style="width:70%">
-              <div class="progress_bar">
-                <div class="difficulty_bar w-35">
-                  <span class="skill-count2"></span>
-                </div>
-              </div>
-              <div class="difficulty_levels">
-                <p><strong>ușor</strong></p>
-                <p>mediu</p>
-                <p>mare</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="card_price">
-          <div>
-            <p class="Lei">
-              <span style="color:#101010; opacity: 0.63; text-decoration: line-through;">3000</span
-              >&emsp;&emsp;&emsp;2500 lei
-            </p>
-          </div>
-          <div class="cards_button_container">
-            <button class="cards_button_add" type="button">Adaugă în coș</button>
-            <button class="cards_button_details">
-              <a
-                role="link"
-                aria-disabled="true"
-                href="#"
-              ></a>
-              Detalii
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card_image">
-        <img src="{{ 'card-img3.jpg' | asset_url }}">
-      </div>
-      <div class="card_body rg-30">
-        <div class="card_text">
-          <h3 class="card_title">Elite Fitness Instructor</h3>
-          <p class="card_subtitle">Modulul 1 - Instructor Fitness</p>
-          <div class="difficulty_section">
-            <div style="width:30%">
-              <p class="card_difficulty">Dificultate</p>
-            </div>
-            <div style="width:70%">
-              <div class="progress_bar">
-                <div class="difficulty_bar w-35">
-                  <span class="skill-count2"></span>
-                </div>
-              </div>
-              <div class="difficulty_levels">
-                <p><strong>ușor</strong></p>
-                <p>mediu</p>
-                <p>mare</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="card_price">
-          <div>
-            <p class="card_note"><strong>Va fi lansat în curând</strong></p>
-          </div>
-          <div>
-            <button class="cards_button_details">
-              <a
-                role="link"
-                aria-disabled="true"
-                href="#"
-              ></a
-              >Sunt interesat
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
+    {%- endfor -%}
   </div>
 </div>
 {% schema %}
@@ -336,11 +302,90 @@
   "name": "ISCI cards with image",
   "class": "section",
   "tag": "section",
-  "settings": [],
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Titlu"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "column",
+      "name": "Card",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Imagine"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Titlu"
+        },
+        {
+          "type": "text",
+          "id": "subtitlu",
+          "label": "Subtitlu"
+        },
+        {
+          "type": "select",
+          "id": "difficulty",
+          "label": "Dificultate",
+          "options": [
+            {
+              "value": "usor",
+              "label": "Ușor"
+            },
+            {
+              "value": "mediu",
+              "label": "Mediu"
+            },
+            {
+              "value": "dificil",
+              "label": "Dificil"
+            }
+          ],
+          "default": "mediu"
+        },
+        {
+          "type": "text",
+          "id": "price",
+          "label": "Pret intreg"
+        },
+        {
+          "type": "text",
+          "id": "discount_price",
+          "label": "Pret cu discount"
+        },
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Produs"
+        },
+        {
+          "type": "checkbox",
+          "id": "soon",
+          "label": "In curand"
+        }
+      ]
+    }
+  ],
   "presets": [
     {
       "name": "ISCI cards with image",
-      "blocks": []
+      "blocks": [
+        {
+          "type": "column"
+        },
+        {
+          "type": "column"
+        },
+        {
+          "type": "column"
+        }
+      ]
     }
   ]
 }

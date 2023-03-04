@@ -139,6 +139,12 @@
   .w-35 {
     width: 35%;
   }
+  .w-70 {
+    width: 70%;
+  }
+  .w-100 {
+    width: 100%;
+  }
   .rectangle_card-description {
     margin: 0 0 0 15px;
     padding: 0;
@@ -222,103 +228,54 @@
         <h3 class="rectangle_title">Detalii curs</h3>
         <div style="width: 40%;">
           <div class="progress_redbar">
-            <div class="difficulty_redbar w-35">
-              <span class="skill-count2"></span>
-            </div>
+            {% if section.settings.difficulty == 'usor' %}
+              <div class="difficulty_redbar w-35">
+                <span class="skill-count2"></span>
+              </div>
+            {% elsif section.settings.difficulty == 'mediu' %}
+              <div class="difficulty_redbar w-70">
+                <span class="skill-count2"></span>
+              </div>
+            {% else %}
+              <div class="difficulty_redbar w-100">
+                <span class="skill-count2"></span>
+              </div>
+            {% endif %}
           </div>
           <div class="difficulty_redlevels">
             <p>ușor</p>
             <p>mediu</p>
-            <p>mare</p>
+            <p>dificil</p>
           </div>
         </div>
-        <div class="rectangle_informations">
-          <div>
-            <span>
-              <div><img src="{{ 'clock.png' | asset_url }}" style="margin-right:5px;"></div>
-            </span>
-            <p>
-              Sâmbătă, 24 Septembrie, 10:00 - 18:00<br>
-              Duminică, 24 Septembrie, 10:00 - 18:00
-            </p>
-          </div>
-          <div>
-            <span>
-              <div><img src="{{ 'location.png' | asset_url }}" stayle="margin-right: 5px;"></div>
-            </span>
-            <p>ZenGym, Str. Iancu Jianu 13, Alba Iulia</p>
-          </div>
-          <div>
-            <span>
-              <div><img src="{{ 'bed.png' | asset_url }}"></div>
-            </span>
-            <p>Recomandare cazare: Crema Residence, 0721.220.130</p>
-          </div>
-        </div>
+        {{ section.settings.rectangle_informations }}
       </div>
     </div>
 
     <div class="rectangle_card stack-top">
       <div class="rectangle_card_top">
         <p class="lei_top">
-          <span style="opacity: 0.63; text-decoration: line-through;">3000</span>&emsp;&emsp;<b>1500 lei</b>
+          <span style="opacity: 0.63; text-decoration: line-through;">{{ section.settings.price }}</span>&emsp;&emsp;<b>
+            {{- section.settings.discount_price -}}
+          </b>
         </p>
       </div>
       <div class="rectangle_card_body">
-        <div class="rectangle_card_details">
-          <h4>Prețuri promoționale</h4>
-          <div class="promotion_data">
-            <p class="promotion_data_line">
-              <span><img src="{{ 'reddot.png' | asset_url }}">&nbsp;14 - 24 Septembrie:&nbsp;</span>
-            </p>
-            <p class="Lei" style="color:#101010;">3000</p>
-          </div>
-          <div class="promotion_data">
-            <p class="promotion_data_line">
-              <span><img src="{{ 'reddot.png' | asset_url }}">&nbsp;03 - 13 Septembrie:&nbsp;</span>
-            </p>
-            <p class="Lei">
-              <span style="color:#101010; opacity: 0.63; text-decoration: line-through;">3000</span>&emsp;2500 lei
-            </p>
-          </div>
-          <div class="promotion_data">
-            <p class="promotion_data_line">
-              <span><img src="{{ 'reddot.png' | asset_url }}">&nbsp;23 August - 02 Septembrie:&nbsp;</span>
-            </p>
-            <p class="Lei">
-              <span style="color:#101010; opacity: 0.63; text-decoration: line-through;">3000</span>&emsp;2000 lei
-            </p>
-          </div>
-          <div class="promotion_data">
-            <p class="promotion_data_line">
-              <span><img src="{{ 'reddot.png' | asset_url }}">&nbsp;12 - 22 August:&nbsp;</span>
-            </p>
-            <p class="Lei">
-              <span style="color:#101010; opacity: 0.63; text-decoration: line-through;">3000</span>&emsp;1500 lei
-            </p>
-          </div>
-        </div>
-        <div class="rectangle_card_details">
-          <h4>Ce vei învăța în acest modul?</h4>
-          <ul class="rectangle_card_description">
-            <li>
-              Generalități<br>
-              <span style="opacity:0.84;font-size:14px;line-height:1.71;">
-                Antrenamentul sportiv, sportivii, antrenorul</span
-              >
-            </li>
-            <li>
-              Etapele dezvoltării sportive<br>
-              <span style="opacity:0.84;font-size:14px;line-height:1.71;">
-                De la inițiere până la înalta performanță</span
-              >
-            </li>
-            <li>Pregătirea generală vs. specializarea timpurie</li>
-            <li>Andrenarea tinerilor sportivi respectând etapele lor de dezvoltare</li>
-          </ul>
-        </div>
+        {{ section.settings.rectangle_card_body }}
         <div class="information_button_container">
-          <button class="information_button_add" type="button">Adaugă în coș</button>
+          {%- if product.selected_or_first_available_variant.available %}
+            {%- form 'product', product, class: 'form', novalidate: 'novalidate', data-type: 'add-to-cart-form' -%}
+              <input type="hidden" name="quantity" value="1">
+              <input
+                type="hidden"
+                name="id"
+                value="{{ product.selected_or_first_available_variant.id }}"
+              >
+              <button class="information_button_add" name="add" type="submit">Adaugă în coș</button>
+            {%- endform -%}
+          {%- else -%}
+            {{ 'products.product.sold_out' | t }}
+          {% endif %}
         </div>
       </div>
     </div>
@@ -330,7 +287,48 @@
   "name": "ISCI information section",
   "class": "section",
   "tag": "section",
-  "settings": [],
+  "settings": [
+    {
+      "type": "text",
+      "id": "price",
+      "label": "t:sections.isci-information-boxes.settings.price.label"
+    },
+    {
+      "type": "text",
+      "id": "discount_price",
+      "label": "t:sections.isci-information-boxes.settings.discount_price.label"
+    },
+    {
+      "type": "select",
+      "id": "difficulty",
+      "label": "Dificultate",
+      "options": [
+        {
+          "value": "usor",
+          "label": "Ușor"
+        },
+        {
+          "value": "mediu",
+          "label": "Mediu"
+        },
+        {
+          "value": "dificil",
+          "label": "Dificil"
+        }
+      ],
+      "default": "mediu"
+    },
+    {
+      "type": "liquid",
+      "id": "rectangle_informations",
+      "label": "t:sections.isci-information-boxes.settings.rectangle_informations.label"
+    },
+    {
+      "type": "liquid",
+      "id": "rectangle_card_body",
+      "label": "t:sections.isci-information-boxes.settings.rectangle_card_body.label"
+    }
+  ],
   "presets": [
     {
       "name": "ISCI information section",

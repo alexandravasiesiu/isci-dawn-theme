@@ -179,89 +179,42 @@
   <div class="multicolumn_flex_container">
     <div class="multicolumn_heading">
       <div class="multicolumn_column">
-        <h3 class="section_title w-95"><strong>DESCRIEREA CURSULUI</strong></h3>
+        <h3 class="section_title w-95">
+          <strong>{{ section.settings.title }}</strong>
+        </h3>
         <div class="w-95">
           <div class="Line-3"><hr class="no-margin"></div>
         </div>
-        <h4 class="heading_description_title w-95"><strong>Cui îi este destinat acest modul?</strong></h4>
-        <ul class="heading_description w-95">
-          <li>
-            Oricărui antrenor, preparator, instructor, sau părinte care este implicat în pregătirea sportivă a
-            tinerilor.
-          </li>
-        </ul>
-        <h4 class="heading_description_title w-95"><strong>Ce vei învăța în acest modul?</strong></h4>
-        <ul class="heading_description w-95">
-          <li>Cum să maximizezi potențialul de reușită a tinerilor sportivi antrenându-i metodic.</li>
-        </ul>
+        {{ section.settings.description }}
       </div>
     </div>
-    <div class="multicolumn_rectangle_column">
-      <div class="multicolumn_column">
-        <h4 class="multicolumn_column_title"><strong>1.GENERALITĂȚI</strong></h4>
-        <ul class="multicolumn_list">
-          <li>Antrenamentul sportiv: proces educativ sau proces de adaptări fiziologice?</li>
-          <li>Sportivi: tipuri de personalități întâlnite și modalități de abordare.</li>
-          <li>Antrenorul: pedagogia și comunicarea în sport</li>
-        </ul>
-      </div>
-    </div>
-    <div class="multicolumn_rectangle_column">
-      <div class="multicolumn_column">
-        <h4 class="multicolumn_column_title"><strong>2.ETAPELE DEZVOLTĂRII SPORTIVE</strong></h4>
-        <ul class="multicolumn_list">
-          <li>Vârstele etapelor în diferite sporturi</li>
-          <li>Inițierea</li>
-          <li>Formarea</li>
-          <li>Specializarea</li>
-          <li>Înalta performanță</li>
-        </ul>
-      </div>
-    </div>
-    <div class="multicolumn_rectangle_column">
-      <div class="multicolumn_column">
-        <h4 class="multicolumn_column_title"><strong>3.PREGĂTIREA GENERALĂ vs. SPECIALIZAREA TIMPURIE</strong></h4>
-        <ul class="multicolumn_list">
-          <li>Diferențe și rezultate obținute cu Modelul Rusesc vs. Modelul American</li>
-          <li>
-            Decizia Chinei în anul 2020 de a forma unele loturi naționale în funcție de rezultatele testelor fizice
-            generale, ignorând rezultatele obținute de sportivi în competiții.
-          </li>
-          <li>
-            Fenomenul puseului de creștere a unor tineri sportivi în perioada izolării cauzată de pandemia de Covid.
-            Cauze și concluzii
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div class="multicolumn_rectangle_column">
-      <div class="multicolumn_column">
-        <h4 class="multicolumn_column_title">
-          <strong>4. ANTRENAREA TINERILOR SPORTIVI RESPECTÂND ETAPELE ACESTORA DE DEZVOLTARE.</strong>
-        </h4>
-        <h5 class="multicolumn_column_subtitle"><strong>Teorie si practică:</strong></h5>
-        <ul class="multicolumn_list">
-          <li>Antrenarea deprinderilor motrice.</li>
-          <li>Antrenarea mobilității</li>
-          <li>Antrenarea forței și puterii</li>
-          <li>Antrenarea rezistenței</li>
-          <li>Antrenarea vitezei</li>
-          <li>Competițiile sportive</li>
-          <li>Planuri de pregătire pe termen lung</li>
-        </ul>
-      </div>
-    </div>
+    {{ section.settings.col1 }}
+    {{ section.settings.col2 }}
+    {{ section.settings.col3 }}
+    {{ section.settings.col4 }}
   </div>
   <div class="multicolumn_button_container">
-    <button class="multicolumn_button_add">
-      <a
-        role="link"
-        aria-disabled="true"
-        href="#"
-      ></a
-      >Adaugă în coș
-    </button>
-    <button class="multicolumn_button_other" type="button">Alte Cursuri</button>
+    {%- if product.selected_or_first_available_variant.available %}
+      {%- form 'product', product, class: 'form', novalidate: 'novalidate', data-type: 'add-to-cart-form' -%}
+        <input type="hidden" name="quantity" value="1">
+        <input
+          type="hidden"
+          name="id"
+          value="{{ product.selected_or_first_available_variant.id }}"
+        >
+        <button class="multicolumn_button_add" type="submit" name="add">
+          Adaugă în coș
+        </button>
+      {%- endform -%}
+    {% endif %}
+
+    <a
+      class="multicolumn_button_other"
+      role="link"
+      href="{{section.settings.cursuri}}"
+    >
+      Alte Cursuri
+    </a>
   </div>
 </div>
 {% schema %}
@@ -269,7 +222,43 @@
   "name": "ISCI multi cols section",
   "class": "section",
   "tag": "section",
-  "settings": [],
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Titlu"
+    },
+    {
+      "type": "html",
+      "id": "description",
+      "label": "Descriere"
+    },
+    {
+      "type": "html",
+      "id": "col1",
+      "label": "Coloana 1"
+    },
+    {
+      "type": "html",
+      "id": "col2",
+      "label": "Coloana 2"
+    },
+    {
+      "type": "html",
+      "id": "col3",
+      "label": "Coloana 3"
+    },
+    {
+      "type": "html",
+      "id": "col4",
+      "label": "Coloana 4"
+    },
+    {
+      "type": "url",
+      "id": "cursuri",
+      "label": "Cursuri"
+    }
+  ],
   "presets": [
     {
       "name": "ISCI multi cols section",
