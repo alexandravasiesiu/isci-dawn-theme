@@ -2,6 +2,7 @@
   "sections": {
     "banner": {
       "type": "main-collection-banner",
+      "disabled": true,
       "settings": {
         "show_collection_description": true,
         "show_collection_image": false,
@@ -10,6 +11,7 @@
     },
     "product-grid": {
       "type": "main-collection-product-grid",
+      "disabled": true,
       "settings": {
         "products_per_page": 16,
         "columns_desktop": 4,
@@ -25,10 +27,46 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "a6ae4115-ca9a-43cf-b2f5-b9f2f45141c2": {
+      "type": "isci-modules",
+      "blocks": {
+        "template--16998129336613__a6ae4115-ca9a-43cf-b2f5-b9f2f45141c2-1678017861dcdd7a16-0": {
+          "type": "column",
+          "settings": {
+            "title": "MODULUL 1",
+            "subtitlu": "Strength & Conditioning for Juniors",
+            "difficulty": "mediu",
+            "price": "3000",
+            "discount_price": "2500ron",
+            "product": "strength-conditioning",
+            "soon": false
+          }
+        },
+        "template--16998129336613__a6ae4115-ca9a-43cf-b2f5-b9f2f45141c2-1678017861dcdd7a16-1": {
+          "type": "column",
+          "settings": {
+            "title": "MODULUL 2",
+            "subtitlu": "Sport Strength Coach™",
+            "difficulty": "dificil",
+            "price": "",
+            "discount_price": "",
+            "product": "strength-conditioning",
+            "soon": true
+          }
+        }
+      },
+      "block_order": [
+        "template--16998129336613__a6ae4115-ca9a-43cf-b2f5-b9f2f45141c2-1678017861dcdd7a16-0",
+        "template--16998129336613__a6ae4115-ca9a-43cf-b2f5-b9f2f45141c2-1678017861dcdd7a16-1"
+      ],
+      "settings": {
+      }
     }
   },
   "order": [
     "banner",
-    "product-grid"
+    "product-grid",
+    "a6ae4115-ca9a-43cf-b2f5-b9f2f45141c2"
   ]
 }

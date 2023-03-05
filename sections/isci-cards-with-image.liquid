@@ -216,24 +216,24 @@
               <div style="width:70%">
                 <div class="progress_bar">
                   <div
-                    class="
-                      difficulty_bar
-                      {% if block.settings.difficulty == 'usor' %}
-                        w-35
-                      {% endif %}
-                      {% if block.settings.difficulty == 'mediu' %}
-                        w-70
-                      {% endif %}
-                      {% if block.settings.difficulty == 'dificil' %}
-                        w-100
-                      {% endif %}
-                    "
-                  >
+                    class='
+                    difficulty_bar
+                    {% if block.settings.difficulty == 'usor' %}
+                      w-35
+                    {% endif %}
+                    {% if block.settings.difficulty == 'mediu' %}
+                      w-70
+                    {% endif %}
+                    {% if block.settings.difficulty == 'dificil' %}
+                      w-100
+                    {% endif %}'>
                     <span class="skill-count2"></span>
                   </div>
                 </div>
                 <div class="difficulty_levels">
-                  <p><strong>ușor</strong></p>
+                  <p>
+                    <strong>ușor</strong>
+                  </p>
                   <p>mediu</p>
                   <p>mare</p>
                 </div>
@@ -243,15 +243,16 @@
           <div class="card_price">
             {% if block.settings.soon %}
               <div>
-                <p class="card_note"><strong>Va fi lansat în curând</strong></p>
+                <p class="card_note">
+                  <strong>Va fi lansat în curând</strong>
+                </p>
               </div>
               <div>
+                {% assign interestedUrl = '/pages/sunt-interesat?product_handle=' | append: block.settings.product.handle %}
                 <a
                   class="cards_button_details"
                   role="link"
-                  aria-disabled="true"
-                  href="{{block.settings.product.url}}"
-                >
+                  href="{{ interestedUrl }}">
                   Sunt interesat
                 </a>
               </div>
@@ -259,34 +260,38 @@
               <div>
                 <p class="Lei">
                   <span style="color:#101010; opacity: 0.63; text-decoration: line-through;">
-                    {{ block.settings.price -}}</span
-                  >&emsp;&emsp;&emsp; {{ block.settings.discount_price }}
+                    {{ block.settings.price -}}</span>&emsp;&emsp;&emsp; {{ block.settings.discount_price }}
                 </p>
               </div>
               <div class="cards_button_container">
-                {%- if block.settings.product
-                  and block.settings.product.selected_or_first_available_variant.available
-                %}
+                {%- if
+ block.settings.product
+ and block.settings.product.selected_or_first_available_variant.available
+ %}
                   {%- form 'product',
-                    block.settings.product,
-                    class: 'form',
-                    novalidate: 'novalidate',
-                    data-type: 'add-to-cart-form'
-                  -%}
-                    <input type="hidden" name="quantity" value="1">
+ block.settings.product,
+ class: 'form',
+ novalidate: 'novalidate',
+ data-type: 'add-to-cart-form'
+ -%}
+                    <input
+                      type="hidden"
+                      name="quantity"
+                      value="1">
                     <input
                       type="hidden"
                       name="id"
-                      value="{{ block.settings.product.selected_or_first_available_variant.id }}"
-                    >
-                    <button class="cards_button_add" name="add" type="submit">Adaugă în coș</button>
+                      value="{{ block.settings.product.selected_or_first_available_variant.id }}">
+                    <button
+                      class="cards_button_add"
+                      name="add"
+                      type="submit">Adaugă în coș</button>
                   {%- endform -%}
                 {% endif %}
                 <a
                   class="cards_button_details"
                   role="link"
-                  href="{{ block.settings.product.url }}"
-                >
+                  href="{{ block.settings.product.url }}">
                   Detalii
                 </a>
               </div>
@@ -298,95 +303,87 @@
   </div>
 </div>
 {% schema %}
-{
-  "name": "ISCI cards with image",
-  "class": "section",
-  "tag": "section",
-  "settings": [
-    {
-      "type": "text",
-      "id": "title",
-      "label": "Titlu"
-    }
-  ],
-  "blocks": [
-    {
-      "type": "column",
-      "name": "Card",
-      "settings": [
-        {
-          "type": "image_picker",
-          "id": "image",
-          "label": "Imagine"
-        },
-        {
-          "type": "text",
-          "id": "title",
-          "label": "Titlu"
-        },
-        {
-          "type": "text",
-          "id": "subtitlu",
-          "label": "Subtitlu"
-        },
-        {
-          "type": "select",
-          "id": "difficulty",
-          "label": "Dificultate",
-          "options": [
-            {
-              "value": "usor",
-              "label": "Ușor"
-            },
-            {
-              "value": "mediu",
-              "label": "Mediu"
-            },
-            {
-              "value": "dificil",
-              "label": "Dificil"
-            }
-          ],
-          "default": "mediu"
-        },
-        {
-          "type": "text",
-          "id": "price",
-          "label": "Pret intreg"
-        },
-        {
-          "type": "text",
-          "id": "discount_price",
-          "label": "Pret cu discount"
-        },
-        {
-          "type": "product",
-          "id": "product",
-          "label": "Produs"
-        },
-        {
-          "type": "checkbox",
-          "id": "soon",
-          "label": "In curand"
-        }
-      ]
-    }
-  ],
-  "presets": [
-    {
-      "name": "ISCI cards with image",
-      "blocks": [
-        {
-          "type": "column"
-        },
-        {
-          "type": "column"
-        },
-        {
-          "type": "column"
-        }
-      ]
-    }
-  ]
-}
+  {
+    "name": "ISCI cards with image",
+    "class": "section",
+    "tag": "section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Titlu"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "column",
+        "name": "Card",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Imagine"
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Titlu"
+          },
+          {
+            "type": "text",
+            "id": "subtitlu",
+            "label": "Subtitlu"
+          },
+          {
+            "type": "select",
+            "id": "difficulty",
+            "label": "Dificultate",
+            "options": [
+              {
+                "value": "usor",
+                "label": "Ușor"
+              }, {
+                "value": "mediu",
+                "label": "Mediu"
+              }, {
+                "value": "dificil",
+                "label": "Dificil"
+              }
+            ],
+            "default": "mediu"
+          }, {
+            "type": "text",
+            "id": "price",
+            "label": "Pret intreg"
+          }, {
+            "type": "text",
+            "id": "discount_price",
+            "label": "Pret cu discount"
+          }, {
+            "type": "product",
+            "id": "product",
+            "label": "Produs"
+          }, {
+            "type": "checkbox",
+            "id": "soon",
+            "label": "In curand"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "ISCI cards with image",
+        "blocks": [
+          {
+            "type": "column"
+          }, {
+            "type": "column"
+          }, {
+            "type": "column"
+          }
+        ]
+      }
+    ]
+  }
 {% endschema %}

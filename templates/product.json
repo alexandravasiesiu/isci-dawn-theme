@@ -228,7 +228,8 @@
             "difficulty": "usor",
             "price": "3000",
             "discount_price": "1500 lei",
-            "product": "strength-conditioning"
+            "product": "strength-conditioning",
+            "soon": false
           }
         },
         "template--16998129369381__c667f9d3-0d9a-4fbf-b572-feffd3e44b95-1677957096f17c9a19-1": {
@@ -240,7 +241,8 @@
             "difficulty": "mediu",
             "price": "3000",
             "discount_price": "2500 lei",
-            "product": "strength-conditioning"
+            "product": "strength-conditioning",
+            "soon": false
           }
         },
         "template--16998129369381__c667f9d3-0d9a-4fbf-b572-feffd3e44b95-1677957096f17c9a19-2": {
@@ -252,7 +254,8 @@
             "difficulty": "dificil",
             "price": "",
             "discount_price": "",
-            "product": ""
+            "product": "strength-conditioning",
+            "soon": true
           }
         }
       },
@@ -262,7 +265,7 @@
         "template--16998129369381__c667f9d3-0d9a-4fbf-b572-feffd3e44b95-1677957096f17c9a19-2"
       ],
       "settings": {
-        "title": ""
+        "title": "ALTE CURSURI"
       }
     }
   },

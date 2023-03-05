@@ -187,224 +187,179 @@
     <p class="modules_heading">Strength & Conditioning Coach</p>
   </div>
   <div class="modules_flex_container page-width isci-padding-y">
-    <div class="modules_card">
-      <div class="modules_card_body rg-30">
-        <div class="modules_card_text">
-          <h3 class="modules_card_title">MODULUL 1</h3>
-          <p class="modules_card_subtitle">Strength & Conditioning for Juniors</p>
-          <div class="modules_difficulty_section">
-            <div style="width:30%">
-              <p class="modules_card_difficulty">Dificultate</p>
-            </div>
-            <div style="width:70%">
-              <div class="modules_progress_bar">
-                <div class="modules_difficulty_bar w-35">
-                  <span class="skill-count2"></span>
+    {%- for block in section.blocks -%}
+      <div class="modules_card">
+        <div class="modules_card_body rg-30">
+          <div class="modules_card_text">
+            <h3 class="modules_card_title">{{ block.settings.title }}</h3>
+            <p class="modules_card_subtitle">{{ block.settings.subtitlu }}</p>
+            <div class="modules_difficulty_section">
+              <div style="width:30%">
+                <p class="modules_card_difficulty">Dificultate</p>
+              </div>
+              <div style="width:70%">
+                <div class="modules_progress_bar">
+                  <div
+                    class='modules_difficulty_bar
+                    {% if block.settings.difficulty == 'usor' %}
+                      w-35
+                    {% endif %}
+                    {% if block.settings.difficulty == 'mediu' %}
+                      w-70
+                    {% endif %}
+                    {% if block.settings.difficulty == 'dificil' %}
+                      w-100
+                    {% endif %}
+                    "'>
+                    <span class="skill-count2"></span>
+                  </div>
+                </div>
+                <div class="modules_difficulty_levels">
+                  <p>
+                    <strong>ușor</strong>
+                  </p>
+                  <p>mediu</p>
+                  <p>mare</p>
                 </div>
               </div>
-              <div class="modules_difficulty_levels">
-                <p><strong>ușor</strong></p>
-                <p>mediu</p>
-                <p>mare</p>
-              </div>
             </div>
           </div>
-        </div>
-        <div class="modules_card_price">
-          <div>
-            <p class="modules_lei">
-              <span style="color:#101010; opacity: 0.63; text-decoration: line-through;">3000</span
-              >&emsp;&emsp;&emsp;2500 lei
-            </p>
-          </div>
-          <div class="modules_button_container">
-            <button class="modules_button_add" type="button">Adaugă în coș</button>
-            <button class="modules_button_details">
-              <a
-                role="link"
-                aria-disabled="true"
-                href="#"
-              ></a
-              >Detalii
-            </button>
+          <div class="modules_card_price">
+            {% if block.settings.soon %}
+              <div>
+                <p class="modules_card_note">
+                  <strong>Va fi lansat în curând</strong>
+                </p>
+              </div>
+              <div class="modules_button_container">
+                {% assign interestedUrl = '/pages/sunt-interesat?product_handle=' | append: block.settings.product.handle %}
+                <a
+                  class="modules_button_details"
+                  role="link"
+                  href="{{ interestedUrl }}">
+                  Sunt interesat
+                </a>
+              </div>
+            {% else %}
+              <div>
+                <p class="modules_lei">
+                  <span style="color:#101010; opacity: 0.63; text-decoration: line-through;">
+                    {{ block.settings.price }}
+                  </span>&emsp;&emsp;&emsp;
+                  {{ block.settings.discount_price }}
+                </p>
+              </div>
+              <div class="modules_button_container">
+                {%- if
+ block.settings.product
+ and block.settings.product.selected_or_first_available_variant.available
+ %}
+                  {%- form 'product',
+ block.settings.product,
+ class: 'form',
+ novalidate: 'novalidate',
+ data-type: 'add-to-cart-form'
+ -%}
+                    <input
+                      type="hidden"
+                      name="quantity"
+                      value="1">
+                    <input
+                      type="hidden"
+                      name="id"
+                      value="{{ block.settings.product.selected_or_first_available_variant.id }}">
+                    <button
+                      class="modules_button_add"
+                      name="add"
+                      type="submit">Adaugă în coș</button>
+                  {%- endform -%}
+                {% endif %}
+                <a
+                  class="modules_button_details"
+                  role="link"
+                  href="{{ block.settings.product.url }}">
+                  Detalii
+                </a>
+              </div>
+            {% endif %}
           </div>
         </div>
       </div>
-    </div>
-    <div class="modules_card">
-      <div class="modules_card_body rg-30">
-        <div class="modules_card_text">
-          <h3 class="modules_card_title">MODULUL 2</h3>
-          <p class="modules_card_subtitle">Sport Strength Coach&trade;</p>
-          <div class="modules_difficulty_section">
-            <div style="width:30%">
-              <p class="modules_card_difficulty">Dificultate</p>
-            </div>
-            <div style="width:70%">
-              <div class="modules_progress_bar">
-                <div class="modules_difficulty_bar w-70">
-                  <span class="skill-count2"></span>
-                </div>
-              </div>
-              <div class="modules_difficulty_levels">
-                <p>ușor</p>
-                <p><strong>mediu</strong></p>
-                <p>mare</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="modules_card_price">
-          <div>
-            <p class="modules_card_note"><strong>Va fi lansat în curând</strong></p>
-          </div>
-          <div class="modules_button_container">
-            <button class="modules_button_add" type="button">Adaugă în coș</button>
-            <button class="modules_button_details">
-              <a
-                role="link"
-                aria-disabled="true"
-                href="#"
-              ></a
-              >Detalii
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="modules_card">
-      <div class="modules_card_body rg-30">
-        <div class="modules_card_text">
-          <h3 class="modules_card_title">MODULUL 3</h3>
-          <p class="modules_card_subtitle">Sport Strength Coach&trade;</p>
-          <div class="modules_difficulty_section">
-            <div style="width:30%">
-              <p class="modules_card_difficulty">Dificultate</p>
-            </div>
-            <div style="width:70%">
-              <div class="modules_progress_bar">
-                <div class="modules_difficulty_bar w-100">
-                  <span class="skill-count2"></span>
-                </div>
-              </div>
-              <div class="modules_difficulty_levels">
-                <p>ușor</p>
-                <p>mediu</p>
-                <p><strong>mare</strong></p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="modules_card_price">
-          <div>
-            <p class="modules_card_note"><strong>Va fi lansat în curând</strong></p>
-          </div>
-          <div>
-            <button class="modules_button_details">
-              <a
-                role="link"
-                aria-disabled="true"
-                href="#"
-              ></a
-              >Sunt interesat
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="modules_card">
-      <div class="modules_card_body rg-30">
-        <div class="modules_card_text">
-          <h3 class="modules_card_title">MODULUL 4</h3>
-          <p class="modules_card_subtitle">Exercise Specialist&trade;</p>
-          <div class="modules_difficulty_section">
-            <div style="width:30%">
-              <p class="modules_card_difficulty">Dificultate</p>
-            </div>
-            <div style="width:70%">
-              <div class="modules_progress_bar">
-                <div class="modules_difficulty_bar w-100">
-                  <span class="skill-count2"></span>
-                </div>
-              </div>
-              <div class="modules_difficulty_levels">
-                <p>ușor</p>
-                <p>mediu</p>
-                <p><strong>mare</strong></p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="modules_card_price">
-          <div>
-            <p class="modules_card_note"><strong>Va fi lansat în curând</strong></p>
-          </div>
-          <div class="modules_button_container">
-            <button class="modules_button_details">
-              <a
-                role="link"
-                aria-disabled="true"
-                href="#"
-              ></a
-              >Sunt interesat
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="modules_card">
-      <div class="modules_card_body rg-30">
-        <div class="modules_card_text">
-          <h3 class="modules_card_title">MODULUL 5</h3>
-          <p class="modules_card_subtitle">Recovery & Regeneration Tehniques&trade;</p>
-          <div class="modules_difficulty_section">
-            <div style="width:30%">
-              <p class="modules_card_difficulty">Dificultate</p>
-            </div>
-            <div style="width:70%">
-              <div class="modules_progress_bar">
-                <div class="modules_difficulty_bar w-100">
-                  <span class="skill-count2"></span>
-                </div>
-              </div>
-              <div class="modules_difficulty_levels">
-                <p>ușor</p>
-                <p>mediu</p>
-                <p><strong>mare</strong></p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="modules_card_price">
-          <div>
-            <p class="modules_card_note"><strong>Va fi lansat în curând</strong></p>
-          </div>
-          <div class="modules_button_container">
-            <button class="modules_button_details">
-              <a
-                role="link"
-                aria-disabled="true"
-                href="#"
-              ></a
-              >Sunt interesat
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
+    {% endfor %}
   </div>
 </div>
 {% schema %}
-{
-  "name": "ISCI modules",
-  "class": "section",
-  "tag": "section",
-  "settings": [],
-  "presets": [
-    {
-      "name": "ISCI modules",
-      "blocks": []
-    }
-  ]
-}
+  {
+    "name": "ISCI modules",
+    "class": "section",
+    "tag": "section",
+    "settings": [],
+    "blocks": [
+      {
+        "type": "column",
+        "name": "Card",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Titlu"
+          },
+          {
+            "type": "text",
+            "id": "subtitlu",
+            "label": "Subtitlu"
+          },
+          {
+            "type": "select",
+            "id": "difficulty",
+            "label": "Dificultate",
+            "options": [
+              {
+                "value": "usor",
+                "label": "Ușor"
+              }, {
+                "value": "mediu",
+                "label": "Mediu"
+              }, {
+                "value": "dificil",
+                "label": "Dificil"
+              }
+            ],
+            "default": "mediu"
+          },
+          {
+            "type": "text",
+            "id": "price",
+            "label": "Pret intreg"
+          }, {
+            "type": "text",
+            "id": "discount_price",
+            "label": "Pret cu discount"
+          }, {
+            "type": "product",
+            "id": "product",
+            "label": "Produs"
+          }, {
+            "type": "checkbox",
+            "id": "soon",
+            "label": "In curand"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "ISCI modules",
+        "blocks": [
+          {
+            "type": "column"
+          }, {
+            "type": "column"
+          }, {
+            "type": "column"
+          }
+        ]
+      }
+    ]
+  }
 {% endschema %}

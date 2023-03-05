@@ -1,0 +1,24 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "custom_css": [
+        "h1 {text-align: center !important;}"
+      ],
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "0a8a32c8-30c2-45da-8614-6f9ba5b9b489": {
+      "type": "isci-interested-form",
+      "settings": {
+        "email": "andrei@gypaetuscode.com"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "0a8a32c8-30c2-45da-8614-6f9ba5b9b489"
+  ]
+}

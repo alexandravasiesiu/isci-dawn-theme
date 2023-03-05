@@ -101,6 +101,38 @@
   }
 {%- endstyle -%}
 
+
+
+{%- assign page_url = content_for_header | split: '"pageurl":"' | last | split: '"' | first | split: request.host | last | replace: '\/','/' | replace:'%20',' ' | replace:'\u0026','&'  -%}
+{% assign product_handle = blank %}
+{% assign product = blank %}
+
+{%- for i in (1..1) -%}
+
+  {%- unless page_url contains "?" -%}
+    {% break %}{%- endunless -%}
+  {%- assign query_string = page_url | split: '?' | last -%}
+  {%- assign qry_parts = query_string | split: '&' -%}
+
+  {%- for part in qry_parts -%}
+    {%- assign key_and_value = part | split: '=' -%}
+    {%- if key_and_value.size > 1 -%}
+      {% if key_and_value[0] == 'product_handle' %}
+        {% assign product_handle = key_and_value[1] %}
+      {% endif %}
+    {%- endif -%}
+  {%- endfor -%}
+{%- endfor -%}
+
+{% if product_handle %}
+  {% assign product = all_products[product_handle] %}
+{% else %}
+  <script>
+    window.location.href = "/404"
+    alert("caine")
+  </script>
+{% endif %}
+
 <div class="interested_section">
   <div class="interested_heading_container">
     <p class="interested_heading">Sunt interesat</p>
@@ -110,24 +142,67 @@
       <div class="interested_rectangle_heading">
         <p>
           <u>
-            <strong> Strength & Conditioning Coach </strong>
+            <strong>
+              {{ product.title }}
+            </strong>
           </u>
         </p>
-        <p>Modulul 2 - Sport Strength Coach&trade;</p>
+
+        {% if product.collections.size > 0 %}
+          {% assign collection = product.collections.first %}
+          <p>{{ collection.title }}</p>
+        {% endif %}
       </div>
       <div class="interested_form">
         <div class="interested_form_description">
           <p>Informații personale</p>
         </div>
-        <form class="interested_form_boxes">
+        <form
+          class="interested_form_boxes"
+          method="POST"
+          action="https://formsubmit.co/{{ section.settings.email }}">
+
+          <input
+            type="text"
+            id="product_id"
+            name="product_id"
+            hidden
+            value="{{ product.id }}">
+          <input
+            type="text"
+            id="product_handle"
+            name="product_handle"
+            hidden
+            value="{{ product.handle }}">
+          <input
+            type="text"
+            id="product_url"
+            name="product_url"
+            hidden
+            value="{{ product.url }}">
           <div class="interested_box">
-            <input class="data_box" type="text" id="full_name" name="FullName" placeholder="Nume complet*">
+            <input
+              class="data_box"
+              type="text"
+              id="full_name"
+              name="FullName"
+              placeholder="Nume complet*">
           </div>
           <div class="interested_box">
-            <input class="data_box" type="text" id="mail_adress" name="Mail_Adress" placeholder="E-mail*">
+            <input
+              class="data_box"
+              type="text"
+              id="mail_adress"
+              name="Mail_Adress"
+              placeholder="E-mail*">
           </div>
           <div class="interested_box">
-            <input class="data_box" type="text" id="phone" name="Tel" placeholder="Telefon*">
+            <input
+              class="data_box"
+              type="text"
+              id="phone"
+              name="Tel"
+              placeholder="Telefon*">
           </div>
           <div class="interested_form_bottom">
             <button class="button_submit" type="submit">TRIMITE</button>
@@ -139,16 +214,22 @@
 </div>
 
 {% schema %}
-{
-  "name": "ISCI interested form",
-  "class": "section",
-  "tag": "section",
-  "settings": [],
-  "presets": [
-    {
-      "name": "ISCI interested form",
-      "blocks": []
-    }
-  ]
-}
+  {
+    "name": "ISCI interested form",
+    "class": "section",
+    "tag": "section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "email",
+        "label": "Destinatar formular"
+      }
+    ],
+    "presets": [
+      {
+        "name": "ISCI interested form",
+        "blocks": []
+      }
+    ]
+  }
 {% endschema %}
